@@ -1,0 +1,26 @@
+# Archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+env/
+
+# Archivos y dependencias de FastAPI
+*.log
+*.sqlite
+instance/
+.env
+
+# IDEs y editores
+.vscode/
+.idea/
+
+# Git
+.git/
+
+# Ignorar carpetas específicas con todo su contenido
+modulo/model_load/** 
+modulo/model_selector/** 
+/modulo/database-preprosesing/
+

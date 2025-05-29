@@ -1,0 +1,16 @@
+fastapi 
+uvicorn
+numpy
+joblib
+scipy
+pandas
+scikit-learn
+matplotlib
+colorama
+imbalanced-learn
+seaborn
+deslib
+loky
+pyshark
+psutil
+selenium

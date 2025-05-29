@@ -1,0 +1,117 @@
+version: '3.8'
+
+services:
+  # Servicios de sample_website
+  dbmysql:
+    container_name: psmysql
+    image: mysql:5.7
+    cap_add:
+      - SYS_NICE
+    volumes:
+      - mysqldata:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: ps
+      MYSQL_USER: ps
+      MYSQL_PASSWORD: ps
+    ports:
+      - "3308:3306"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-p12345678"]
+      timeout: 20s
+      retries: 10
+    networks:
+      sample_website_default:
+        ipv4_address: 172.18.0.2
+
+  pspresta:
+    container_name: psweb
+    image: prestashop/prestashop:1.7.7.7
+    volumes:
+      - prestadata:/var/www/html
+    depends_on:
+      dbmysql:
+        condition: service_healthy
+    ports:
+      - "8088:80"
+    environment:
+      PS_INSTALL_AUTO: 1
+      DB_SERVER: dbmysql
+      DB_USER: ps
+      DB_PASSWD: ps
+      DB_NAME: ps
+      PS_LOCALE: es
+    restart: unless-stopped
+    networks:
+      sample_website_default:
+        ipv4_address: 172.18.0.3
+
+  # Servicios de moderate_bot con nombres configurados y orden de inicio
+  bot_remote_1:
+    container_name: bot_remote_1
+    image: selenium/standalone-firefox
+    ports:
+      - "4001:4444"
+    depends_on:
+      - pspresta
+    networks:
+      - sample_website_default
+    restart: always
+
+  bot_remote_2:
+    container_name: bot_remote_2
+    image: selenium/standalone-firefox
+    ports:
+      - "4002:4444"
+    depends_on:
+      - bot_remote_1
+    networks:
+      - sample_website_default
+    restart: always
+
+  bot_remote_3:
+    container_name: bot_remote_3
+    image: selenium/standalone-firefox
+    ports:
+      - "4003:4444"
+    depends_on:
+      - bot_remote_2
+    networks:
+      - sample_website_default
+    restart: always
+
+  bot_remote_4:
+    container_name: bot_remote_4
+    image: selenium/standalone-firefox
+    ports:
+      - "4004:4444"
+    depends_on:
+      - bot_remote_3
+    networks:
+      - sample_website_default
+    restart: always
+
+  bot_remote_5:
+    container_name: bot_remote_5
+    image: selenium/standalone-firefox
+    ports:
+      - "4005:4444"
+    depends_on:
+      - bot_remote_4
+    networks:
+      - sample_website_default
+    restart: always
+
+volumes:
+  mysqldata:
+  prestadata:
+
+networks:
+  sample_website_default:
+    name: sample_website_default
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.18.0.0/16
+          gateway: 172.18.0.1
