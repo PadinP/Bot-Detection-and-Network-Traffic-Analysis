@@ -6,7 +6,7 @@ from app.services.capture_service import start_capture, stop_capture
 router = APIRouter(prefix="/capture", tags=["Capture"])
 
 @router.post("/start-capture")
-def start_capture_endpoint(capture_time: int = 60, sleep_time: int = 30):
+def start_capture_endpoint(capture_time: int = 60, sleep_time: int = 15):
     return start_capture(capture_time, sleep_time)
 
 @router.post("/stop-capture")

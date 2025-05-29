@@ -5,7 +5,7 @@ from SniffPyBot.features_capture_mp.main import run_capture
 from app.config.globals import processes
 from SniffPyBot.features_capture_mp.settings import logger as logging
 
-def start_capture(capture_time,sleep_time):
+def start_capture(capture_time):
     """
     Inicia la captura en un proceso separado, espera 'capture_time' segundos,
     y luego detiene el proceso de captura.
@@ -22,13 +22,13 @@ def start_capture(capture_time,sleep_time):
     time.sleep(capture_time)
 
     # Detiene la captura y espera a que el proceso finalice
-    stop_result = stop_capture(sleep_time)
+    stop_result = stop_capture()
     print(f"⏹️ Captura detenida después de {capture_time} segundos. Resultado: {stop_result}")
 
        
     return {"status": "Capture cycle complete"}
 
-def stop_capture(sleep_time):
+def stop_capture():
     """
     Detiene inmediatamente el proceso de captura y bloquea la ejecución
     hasta que se liberen los recursos del proceso. Si el proceso está en ejecución,
@@ -38,6 +38,7 @@ def stop_capture(sleep_time):
     :param sleep_time: Tiempo (en segundos) a esperar tras finalizar el proceso.
     :return: Diccionario con el estado resultante del cierre del proceso de captura.
     """
+    sleep_time = int = 15
     process = processes.get("capture")
     if process and process.is_alive():
         # Forzar la terminación del proceso

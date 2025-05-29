@@ -1,6 +1,6 @@
 # app/routers/detection.py
 from fastapi import APIRouter, HTTPException
-from app.services.bot_detection_service import detection_run_all
+from app.services.detection_service import detection_run_all
 
 router = APIRouter(prefix="/detection", tags=["Detection"])
 

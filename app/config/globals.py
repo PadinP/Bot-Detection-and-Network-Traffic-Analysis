@@ -6,7 +6,7 @@ processes = {} # Diccionario global que nos permite almacenar la referencia al p
 detection_module = DetectionModule()
 
 # The interface to listen on.
-NETWORK_INTERFACE = "br-c7e7ec0172e0"
+NETWORK_INTERFACE = "br-28b50efc5441"
 
 # 'br-05d0a28ad910' 
 # The path to the pcap file to save.

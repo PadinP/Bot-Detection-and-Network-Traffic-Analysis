@@ -107,22 +107,52 @@ class Component:
         except Exception as e:
             logging.error(f"Error writing to file: {str(e)}")
 
+    def ip_exists_in_file(self, file_path, dst_addr):
+        """
+        Verifica si la IP ya se encuentra en el archivo.
+        Se asume que cada línea sigue el formato 'StartTime,DstAddr'.
+        """
+        try:
+            with open(file_path, "r") as f:
+                # Saltar el encabezado
+                next(f, None)
+                for line in f:
+                    line = line.strip()
+                    if not line:
+                        continue
+                    parts = line.split(",")
+                    if len(parts) < 2:
+                        continue
+                    if parts[1].strip() == dst_addr:
+                        return True
+            return False
+        except Exception as e:
+            # Si el archivo no existe o se produce un error, asumimos que la IP no está presente
+            return False
 
     def set_positives(self, x_clasf, y_clasf, start_dst):
+        """
+        Procesa las entradas, guarda las instancias etiquetadas como humanas y bots,
+        y evita re-escribir registros (IP duplicadas) en cada archivo consultándolo.
+        """
         print('Eliminando instancias de bots de los datos de entrada...')
         print(f'Total de datos: {len(x_clasf)}')
 
         for i, j, (start_time, dst_addr) in zip(x_clasf, y_clasf, start_dst):
             if j == 0:  # Filtrar datos de humanos
                 self.x_positives.append(i)
-                self.save_data(self.file_human, start_time, dst_addr)
+                # Para humanos, verificar que la ip no esté ya presente en el archivo
+                if not self.ip_exists_in_file(self.file_human, dst_addr):
+                    self.save_data(self.file_human, start_time, dst_addr)
             elif j == 1:  # Filtrar datos de bots
-                self.save_data(self.file_bot, start_time, dst_addr)
+                # Para bots, la verificación es similar
+                if not self.ip_exists_in_file(self.file_bot, dst_addr):
+                    self.save_data(self.file_bot, start_time, dst_addr)
 
         print('Instancias de bots eliminadas y datos almacenados correctamente')
-        self.x_positives = np.array(self.x_positives) 
-        # self.x_positives = self.simulate_positives(np.array(self.x_positives), 0.4) #simular cambio de comportamiento
-
+        self.x_positives = np.array(self.x_positives)
+        # self.x_positives = self.simulate_positives(np.array(self.x_positives), 0.4)  # Simular cambio de comportamiento
+        
     def set_characterization_label(self):
         """Método para asignar la etiqueta basado en el menor resto, dividiendo en sublotes
         y añadiendo el resto al último sublote"""
