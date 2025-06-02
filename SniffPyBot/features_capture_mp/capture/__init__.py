@@ -10,13 +10,14 @@ class Capture:
     for each netflow
     """
 
-    def __init__(self, interface, output):
+    def __init__(self, interface, output,file_path):
         """
         @param interface: name of the interface to capture traffic from
         @param output: output path where to save all captured traffic
         """
         self.interface = interface
         self.out_file = output
+        self.file_path = file_path
 
     def start(self):
         """
@@ -35,7 +36,7 @@ class Capture:
                 thread.on_thread(packet)
             else:
                 logging.info(f'Captured packet with id: {key}')
-                thread = FlowAnalysis(key, packet)
+                thread = FlowAnalysis(key, packet,self.file_path)
                 thread.start()
 
     @staticmethod

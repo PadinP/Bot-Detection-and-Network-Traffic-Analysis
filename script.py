@@ -10,7 +10,12 @@ commands = [
     "python3 remote-driver.py 2",
     "python3 remote-driver.py 3",
     "python3 remote-driver.py 4",
-    "python3 remote-driver.py 5"
+    "python3 remote-driver.py 5",
+    "python3 remote-driver.py 6",
+    "python3 remote-driver.py 7",
+    "python3 remote-driver.py 8",
+    "python3 remote-driver.py 9",
+    "python3 remote-driver.py 10",
 ]
 
 for command in commands:

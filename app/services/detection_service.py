@@ -7,12 +7,12 @@ from modulo.preprocessdata import preprocesssing as pre
 from modulo.mlcomponent.component import Component as comp
 from modulo.model_selector.selector import Selector
 from modulo.Multiclasificador.multiclasifier import Multiclasifier
-from app.config.globals import detection_module, FILE_PATH
+from app.config.globals import detection_module
 
-def init_detection():
+def init_detection(file_path):
     """Inicializa el módulo de detección con el archivo de datos."""
-    detection_module.set_data(FILE_PATH)
-    return {"status": "Detection module initialized", "FILE_PATH": FILE_PATH}
+    detection_module.set_data(file_path)
+    return {"status": "Detection module initialized", "FILE_PATH": file_path}
 
 def stage1_detection():
     """
@@ -69,14 +69,14 @@ def stage3_detection():
          detection_module.component_process(predictedLabels=predictions)
          return {"stage": 3, "characterization_saved": True}
 
-def detection_run_all():
+def detection_run_all(file_path):
     """
     Ejecuta todas las etapas de detección en orden.
     """
     print("🚀 Iniciando proceso de detección...")
     try:
         # Ejecuta las diferentes etapas de la detección
-        result_init = init_detection()
+        result_init = init_detection(file_path)
         result_stage1 = stage1_detection()
         result_stage2 = stage2_detection()
         result_stage3 = stage3_detection()

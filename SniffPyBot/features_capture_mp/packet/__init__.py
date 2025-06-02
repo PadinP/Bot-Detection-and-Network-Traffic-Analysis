@@ -2,7 +2,6 @@ import os
 import queue
 from datetime import datetime
 from multiprocessing import Process, Queue
-from app.config.globals import FILE_PATH
 from SniffPyBot.features_capture_mp.settings import logger as logging
 from SniffPyBot.features_capture_mp.utils import get_date_string
 
@@ -34,7 +33,7 @@ class FlowAnalysis(Process):
     creates a new process to analyze packets from same netflow.
     """
 
-    def __init__(self, name, packet):
+    def __init__(self, name, packet,file_path):
         """
         @param name: name of the process
         @param packet: first packet of the netflow received
@@ -43,6 +42,7 @@ class FlowAnalysis(Process):
         self.q = Queue()
         self.continue_flag = True
         self.packet = packet
+        self.file_path = file_path
 
     def init(self):
         """
@@ -235,8 +235,8 @@ class FlowAnalysis(Process):
         }
         
         # Si el archivo no existe o está vacío, escribir la cabecera
-        if not os.path.exists(FILE_PATH) or os.path.getsize(FILE_PATH) == 0:
-            with open(FILE_PATH, "w") as f:
+        if not os.path.exists(self.file_path) or os.path.getsize(self.file_path) == 0:
+            with open(self.file_path, "w") as f:
                 f.write(headers)
         
         try:
@@ -291,7 +291,7 @@ class FlowAnalysis(Process):
             )
 
             # Escribir la línea en el archivo (modo "append")
-            with open(FILE_PATH, "a") as f:
+            with open(self.file_path, "a") as f:
                 f.write(line)
             logging.info(f"Saved flow with ID: {self.name} and direction: {dir_key}")
         

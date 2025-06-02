@@ -6,9 +6,9 @@ processes = {} # Diccionario global que nos permite almacenar la referencia al p
 detection_module = DetectionModule()
 
 # The interface to listen on.
-NETWORK_INTERFACE = "br-28b50efc5441"
+NETWORK_INTERFACE = "br-1d4e96a902cd"
 
-# 'br-05d0a28ad910' 
+ 
 # The path to the pcap file to save.
 PCAP_FILE = 'modulo/capturas/pcaps/capture.pcap'
 
@@ -20,3 +20,7 @@ LOG_FILE = 'bto_logs.log'
 #The path to the capture file to save
 FILE_PATH = "modulo/capturas/flow_analysis.binetflow"
 
+def set_file_path(new_path):
+    global FILE_PATH
+    FILE_PATH = new_path
+    print(f"[globals.py] FILE_PATH actualizado a: {FILE_PATH}")
