@@ -1,7 +1,5 @@
 import pickle as pck
 import random as ram
-import os
-import logging
 from modulo.metric_extractor.metrics import Metric
 from modulo.files.db_handler import save_data_characterization
 from modulo.enfoqueMedia.pruebaEnf25 import *
@@ -23,16 +21,8 @@ class Component:
         self.x_positives = []
         self.expVariance = expVariance
         self.metrics_characterization = []
-        self.file_human = "modulo/exclusiones/no_bots.csv"
-        self.file_bot = "modulo/exclusiones/bots.csv"
-        self.headers = "StartTime,DstAddr\n"
-        
 
-    def validate(self, tipe, x_new=[], y_new=[]):
-        if tipe == 1:
-            if len(y_new) == 0 or len(x_new) == 0:
-                print("New data array is empty")
-                return False
+    def validate(self, tipe):
         if tipe == 2:
             if len(self.x_positives) == 0:
                 print("No human user data exists")
@@ -44,115 +34,7 @@ class Component:
 
         return True
 
-    def show(self, lista):
-        uniq, count = np.unique(lista, return_counts=True)
-        try:
-            print("Number of human users in reclassification:", count[0])
-        except:
-            print("Number of human users in reclassification:", 0)
-        try:
-            print("Number of bots users in reclassification:", count[1])
-        except:
-            print("Number of bots users in reclassification:", 0)
 
-    def simulate_positives(self, x, porcent_cant_min):
-        """
-        Altera los datos clasificados como humanos dentro de un rango especificado sin introducir aleatoriedad.
-
-        Args:
-            x: Matriz de datos a alterar.
-            porcent_cant_min: Porcentaje mínimo de datos a alterar.
-
-        Returns:
-            Matriz de datos alterada.
-        """
-
-        # Calcular el número de datos a alterar
-        cant = len(x)
-        cant_atributes = x.shape[1]
-        cant_modif = int(porcent_cant_min * cant)
-        print("Cantidad de instancias modificadas", cant_modif)
-
-        # Obtener el rango de valores para la alteración
-        max_value = np.max(self.x_positives)
-        min_value = np.min(self.x_positives)
-        range_value = max_value - min_value
-
-        # Alterar los datos
-        for index in range(cant_modif):
-            # Seleccionar una columna y calcular el nuevo valor basado en el índice
-            colum = index % cant_atributes
-            new_value = min_value + (index / cant_modif) * range_value
-
-            # Alterar el valor en la matriz de datos
-            x[index][colum] = new_value
-
-        return x
-
-    def save_data(self, file_path, start_time, dst_addr):
-        try:
-            # Si el archivo no existe, crearlo primero
-            if not os.path.exists(file_path):
-                os.makedirs(os.path.dirname(file_path), exist_ok=True)  # Crear directorios si no existen
-                open(file_path, "w").close()  # Crear el archivo vacío
-
-            # Abrir el archivo en modo agregar ('a')
-            with open(file_path, "a") as f:
-                # Solo escribir el encabezado si el archivo está vacío
-                if os.stat(file_path).st_size == 0:
-                    f.write(self.headers + "\n")
-
-                # Escribir los datos
-                f.write(f"{start_time},{dst_addr}\n")
-        except Exception as e:
-            logging.error(f"Error writing to file: {str(e)}")
-
-    def ip_exists_in_file(self, file_path, dst_addr):
-        """
-        Verifica si la IP ya se encuentra en el archivo.
-        Se asume que cada línea sigue el formato 'StartTime,DstAddr'.
-        """
-        try:
-            with open(file_path, "r") as f:
-                # Saltar el encabezado
-                next(f, None)
-                for line in f:
-                    line = line.strip()
-                    if not line:
-                        continue
-                    parts = line.split(",")
-                    if len(parts) < 2:
-                        continue
-                    if parts[1].strip() == dst_addr:
-                        return True
-            return False
-        except Exception as e:
-            # Si el archivo no existe o se produce un error, asumimos que la IP no está presente
-            return False
-
-    def set_positives(self, x_clasf, y_clasf, start_dst):
-        """
-        Procesa las entradas, guarda las instancias etiquetadas como humanas y bots,
-        y evita re-escribir registros (IP duplicadas) en cada archivo consultándolo.
-        """
-        print('Eliminando instancias de bots de los datos de entrada...')
-        print(f'Total de datos: {len(x_clasf)}')
-
-        for i, j, (start_time, dst_addr) in zip(x_clasf, y_clasf, start_dst):
-            if j == 0:  # Filtrar datos de humanos
-                self.x_positives.append(i)
-                # Para humanos, verificar que la ip no esté ya presente en el archivo
-                if not self.ip_exists_in_file(self.file_human, dst_addr):
-                    self.save_data(self.file_human, start_time, dst_addr)
-            elif j == 1:  # Filtrar datos de bots
-                # Para bots, la verificación es similar
-                if not self.ip_exists_in_file(self.file_bot, dst_addr):
-                    self.save_data(self.file_bot, start_time, dst_addr)
-
-        print('Instancias de bots eliminadas y datos almacenados correctamente')
-        self.x_positives = np.array(self.x_positives)
-        # self.x_positives = self.simulate_positives(np.array(self.x_positives), 0.4)  # Simular cambio de comportamiento
-        
     def set_characterization_label(self):
         """Método para asignar la etiqueta basado en el menor resto, dividiendo en sublotes
         y añadiendo el resto al último sublote"""
@@ -242,15 +124,14 @@ class Component:
         if self.validate(2):
             self.metrics_characterization = Metric(self.x_positives, self.expVariance).run_metrics()
 
-    def run_charact(self, x_clasf, y_clasf,dst_addr):
-        if len(x_clasf) == 0 or len(y_clasf) == 0:
+    def run_charact(self):
+        if len(self.x_positives) == 0:
             print("The users array is empty")
         else:
             print('Inicializando meta-componente\n')
-            self.set_positives(x_clasf, y_clasf,dst_addr)  # De todos los datos que entraron nos quedamos con los humanos y después se simula un cambio
-            print('Calculando metricas\n')
-            self.calculate_metrics()  # se recalculan las metricas para describir el conjunto de datos despues del cambio de comportamiento
+            print('Calculando métricas\n')
+            self.calculate_metrics()  # Se recalculan las métricas usando self.x_positives y self.expVariance.
             print('Corriendo el enfoque para asignar la etiqueta\n')
-            self.set_characterization_label()  # Se le asigna la etiqueta al conjunto de datos usando el enfoque de entropia
-            print('Anadiendo fila a la base de hecho\n')
-            self.save_data_charac()  # se guarda la nueva fila en la base de hechos
+            self.set_characterization_label()  # Se asigna la etiqueta (bots o no bots) según la lógica interna.
+            print('Añadiendo fila a la base de hechos\n')
+            self.save_data_charac()  # Se guarda la caracterización en la base de hechos.

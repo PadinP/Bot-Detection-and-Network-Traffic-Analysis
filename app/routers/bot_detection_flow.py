@@ -27,7 +27,7 @@ def run_scan_parallel(capture_time: int = 60, cycles: int = 3):
     detection_threads = []      # Para gestionar los threads de detección
 
     # Genera la ruta para el primer ciclo de forma inline
-    timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+    timestamp = datetime.datetime.now().strftime("%Y%m%d")
     current_file = os.path.join(base_dir, f"flow_analysis_cycle_1_{timestamp}.binetflow")
     capture_result = start_capture(capture_time=capture_time, file_path=current_file)
     cycles_results.append({
@@ -47,7 +47,7 @@ def run_scan_parallel(capture_time: int = 60, cycles: int = 3):
         detection_trigger = f"Detección iniciada sobre {previous_file}"
 
         # Generar la ruta para el siguiente ciclo de forma inline
-        timestamp = datetime.datetime.now().strftime("%Y%m%d%H%M%S")
+        timestamp = datetime.datetime.now().strftime("%Y%m%d")
         current_file = os.path.join(base_dir, f"flow_analysis_cycle_{cycle}_{timestamp}.binetflow")
         capture_result = start_capture(capture_time=capture_time, file_path=current_file)
         cycles_results.append({

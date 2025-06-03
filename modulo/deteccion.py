@@ -20,7 +20,7 @@ class DetectionModule:
         self.data_preprocess = None
         self.data_charac = None
         self.data_explained_variance_ratio = None
-        self.start_dst = []
+        
 
     def set_data(self, data):
         self.data = data
@@ -34,16 +34,7 @@ class DetectionModule:
         self.data_preprocess = final_data
         self.data_explained_variance_ratio = explained_variance_ratio
 
-        with open(self.data, "r") as f:
-            next(f)  # Salta la cabecera
-            for line in f:
-                if line.strip() == "" or line.startswith("#"):
-                    continue
-                parts = line.strip().split(",")
-                if len(parts) > 6:
-                    start_time = parts[0].strip()
-                    dst_addr = parts[6].strip()
-                    self.start_dst.append((start_time, dst_addr))
+       
 
     def select_model(self):
         self.selector.loadModels()
@@ -74,9 +65,10 @@ class DetectionModule:
         y = self.selected_model.predict(self.data_preprocess)
         return y
 
-    def component_process(self, predictedLabels):
+    def component_process(self):
         component = comp(expVariance=self.data_explained_variance_ratio)
-        component.run_charact(self.data_preprocess, predictedLabels, self.start_dst)
+        component.x_positives = self.data_preprocess
+        component.run_charact()
 
 
 def main():
@@ -95,7 +87,7 @@ def main():
     predictions = dm.classification_process()
     amountBots = np.sum(predictions == 1)
     print(f'Cantidad de bots: {amountBots}')
-    dm.component_process(predictedLabels=predictions)
+    dm.component_process()
 
 if __name__ == "__main__":
     main()
