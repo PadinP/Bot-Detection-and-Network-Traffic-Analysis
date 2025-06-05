@@ -1,3 +1,6 @@
+import os
+from strategies.dask_flujo_filter_strategy import DaskFlujoFilterStrategy
+from strategies.flujo_filter_context import FlujoFilterContext
 from modulo.Facade import *
 from modulo.metric_extractor.metrics import Metric
 from modulo.files.db_handler import save_data_characterization
@@ -5,7 +8,7 @@ from modulo.preprocessdata import preprocesssing as pre
 from modulo.mlcomponent.component import Component as comp
 from modulo.model_selector.selector import Selector
 from modulo.Multiclasificador.multiclasifier import Multiclasifier
-from app.config.globals import detection_module
+from app.config.globals import detection_module,OUTPUT_FOLDER
 
 def init_detection(file_path):
     detection_module.set_data(file_path)
@@ -38,30 +41,52 @@ def stage2_detection():
         amount_bots = int(np.sum(predictions == 1))
         return {"stage": 2, "bots_count": amount_bots}
 
-def stage3_detection():
+
+def stage3_detection(file_path2):
     if not detection_module:
         raise Exception("Detection module not initialized")
     else:
-        file_path2 = "modulo/capturas/flow_analysis_cycle_2_20250602.binetflow"
-        init_detection(file_path2)
+        # Asegurarse de que la carpeta OUTPUT_FOLDER existe:
+        os.makedirs(OUTPUT_FOLDER, exist_ok=True)
+
+        # Extraer el nombre base del archivo y quitarle la extensión.
+        base_name = os.path.basename(file_path2)
+        name_without_ext = os.path.splitext(base_name)[0]
+        
+        # Construir la ruta completa para el archivo filtrado utilizando OUTPUT_FOLDER.
+        filtered_file = os.path.join(OUTPUT_FOLDER, f"{name_without_ext}_filtered.binetflow")
+        
+        # Instanciar la estrategia y el contexto para filtrar el archivo.
+        from strategies.dask_flujo_filter_strategy import DaskFlujoFilterStrategy
+        from strategies.flujo_filter_context import FlujoFilterContext
+        strategy = DaskFlujoFilterStrategy()
+        context = FlujoFilterContext(strategy)
+        
+        # Ejecutar el filtrado: esto leerá file_path2 y generará filtered_file según la lógica definida.
+        context.filtrar_flujos(file_path2, filtered_file)
+        
+        # Inicializar el proceso de detección usando el archivo filtrado.
+        init_detection(filtered_file)
         print("prepro", detection_module.data_preprocess)
-        detection_module.component_process()  # Aquí se usa la versión actualizada.
+        detection_module.component_process()  # Se usa la versión actualizada.
         print("listo")
         return {"stage": 3, "characterization_saved": True}
 
-def detection_run_all(file_path):
-    print("🚀 Iniciando proceso de detección...")
-    try:
-        result_init = init_detection(file_path)
-        result_stage1 = stage1_detection()
-        result_stage2 = stage2_detection()
-        result_stage3 = stage3_detection()
-        detection_result = {
-            "run_all": True,
-            "stages": [result_init, result_stage1, result_stage2, result_stage3]
-        }
-        print("✅ Detección completada:", detection_result)
-    except Exception as ex:
-        print("❌ Error en la detección:", ex)
-        raise
-    return detection_result
+
+
+def detection_pipeline(prev_file: str, current_file: str, ejecutar_stage3: bool = True):
+    """
+    Ejecuta de forma encadenada el proceso de detección:
+      - Se inicia el análisis sobre el archivo del ciclo anterior: init_detection, stage1_detection y stage2_detection.
+      - Condicionalmente, se invoca stage3_detection sobre el nuevo archivo (current_file) si ejecutar_stage3 es True.
+    """
+    # Paso 1: Inicia el proceso de detección sobre el archivo del ciclo anterior.
+    init_detection(prev_file)
+    stage1_detection()
+    stage2_detection()
+    
+    # Paso 2: Ejecutar stage3_detection solo si se requiere (ciclos pares)
+    if ejecutar_stage3:
+        stage3_detection(current_file)
+
+
