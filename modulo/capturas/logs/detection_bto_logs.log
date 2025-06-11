@@ -1,0 +1,85 @@
+2025-06-11 18:17:09,387 - Ciclo 2 - Iniciando detección entre modulo/capturas/flow_analysis_cycle_1.binetflow y modulo/capturas/flow_analysis_cycle_2.binetflow (ejecutar_stage3=True)
+2025-06-11 18:17:09,388 - ---- inicializando con: modulo/capturas/flow_analysis_cycle_1.binetflow
+2025-06-11 18:17:09,388 - ---- stage1_detection start ----
+2025-06-11 18:17:10,019 - Varianza explicada: [0.42812156 0.34142435 0.09872036 0.08130425 0.02839303 0.0114042
+ 0.00408257]
+2025-06-11 18:17:11,606 - Metrics: [235.84663964415074, -4862.858458312972, 3.2807463415523626, 0.5461289580982783, 94.17987157235852, 0.5036693709249702, 0.2791600104904328]
+2025-06-11 18:17:53,107 - Modelos Voting construídos
+2025-06-11 18:17:53,231 - Clasificacion con models voting realizada
+2025-06-11 18:17:53,244 - 0
+1.0    15
+Name: count, dtype: int64
+2025-06-11 18:17:53,245 - ---- stage1_detection end ----
+2025-06-11 18:17:53,245 - ---- stage2_detection start ----
+2025-06-11 18:19:18,977 - Cantidad de modelos cargados: 36
+2025-06-11 18:19:19,923 - Total models: 36
+2025-06-11 18:19:19,927 - Model accuracies: [array([56.80444831]), array([57.29468466]), array([49.78134954]), array([65.85166228]), array([65.40402788]), array([65.43825105]), array([69.63050419]), array([49.00939701]), array([49.03500449]), array([65.21334882]), array([66.38563934]), array([70.75333]), array([66.83423139]), array([62.18757478]), array([63.93658077]), array([63.5772846]), array([67.45165825]), array([70.05125644]), array([54.64643667]), array([52.64599386]), array([50.7069591]), array([60.04667517]), array([60.47522146]), array([67.10753381]), array([70.79595179]), array([70.85583098]), array([59.16098519]), array([68.63625617]), array([67.5631523]), array([65.29557724]), array([71.17170675]), array([69.85308949]), array([52.6424905]), array([64.55622812]), array([63.41729771]), array([65.11232805])]
+2025-06-11 18:19:19,928 - Best model: ADACe1, acc = [71.17170675]
+2025-06-11 18:19:20,011 - Cargando el modulo desde: modulo/model_load/ADACe1.joblib
+2025-06-11 18:19:20,510 - ---- stage2_detection end ----
+2025-06-11 18:19:20,510 - ---- stage3_detection start ----
+2025-06-11 18:19:21,613 - ---- inicializando con: modulo/capturas/archivos_filtrados/flow_analysis_cycle_2_filtered.binetflow
+2025-06-11 18:19:21,613 - Inicializando meta-componente
+
+2025-06-11 18:19:21,613 - Calculando métricas
+
+2025-06-11 18:19:22,694 - Metrics: [235.84663964415074, -4862.858458312972, 3.2807463415523626, 0.5461289580982783, 94.17987157235852, 0.5036693709249702, 0.2791600104904328]
+2025-06-11 18:19:22,694 - Corriendo el enfoque para asignar la etiqueta
+
+2025-06-11 18:19:22,720 - Etiqueta asignada: bots
+2025-06-11 18:19:22,721 - Añadiendo fila a la base de hechos
+
+2025-06-11 18:19:22,721 - 235.84663964415074,-4862.858458312972,3.2807463415523626,0.5461289580982783,94.17987157235852,0.5036693709249702,0.2791600104904328,1
+2025-06-11 18:19:22,722 - Added row to database
+2025-06-11 18:19:22,722 - ---- stage3_detection end ----
+2025-06-11 18:20:37,746 - Ciclo 3 - Iniciando detección entre modulo/capturas/flow_analysis_cycle_2.binetflow y modulo/capturas/flow_analysis_cycle_3.binetflow (ejecutar_stage3=False)
+2025-06-11 18:20:37,746 - ---- inicializando con: modulo/capturas/flow_analysis_cycle_2.binetflow
+2025-06-11 18:20:37,747 - ---- stage1_detection start ----
+2025-06-11 18:20:39,216 - Varianza explicada: [0.37586492 0.28313147 0.24274031 0.05862781 0.02206497 0.00723461
+ 0.00354913]
+2025-06-11 18:20:42,049 - Metrics: [123.10299280327737, -9181.317408034512, 3.5513986214221878, 0.473355449727793, 126.62119064044718, 0.17635443478815416, 0.20556053701414498]
+2025-06-11 18:21:22,324 - Modelos Voting construídos
+2025-06-11 18:21:22,478 - Clasificacion con models voting realizada
+2025-06-11 18:21:22,478 - 0
+1.0    15
+Name: count, dtype: int64
+2025-06-11 18:21:22,480 - ---- stage1_detection end ----
+2025-06-11 18:21:22,480 - ---- stage2_detection start ----
+2025-06-11 18:21:41,567 - Cantidad de modelos cargados: 72
+2025-06-11 18:21:44,469 - Total models: 72
+2025-06-11 18:21:44,480 - Model accuracies: [array([60.45036388]), array([61.26661109]), array([50.55019192]), array([69.17035116]), array([61.31608538]), array([70.17476459]), array([73.9754191]), array([50.5147724]), array([49.95125069]), array([63.26326679]), array([70.00314917]), array([74.20213176]), array([74.20008141]), array([74.45930637]), array([74.62748648]), array([70.34996898]), array([65.57140747]), array([75.2297893]), array([58.75464535]), array([59.97209382]), array([52.95183747]), array([57.63042741]), array([55.70276327]), array([68.09067076]), array([75.27673576]), array([75.24657444]), array([62.01752509]), array([82.52812971]), array([79.31246218]), array([78.42592752]), array([77.8452931]), array([78.25235363]), array([54.96837205]), array([62.2249221]), array([57.97300448]), array([68.55981509]), array([60.45036388]), array([61.26661109]), array([50.55019192]), array([69.17035116]), array([61.31608538]), array([70.17476459]), array([73.9754191]), array([50.5147724]), array([49.95125069]), array([63.26326679]), array([70.00314917]), array([74.20213176]), array([74.20008141]), array([74.45930637]), array([74.62748648]), array([70.34996898]), array([65.57140747]), array([75.2297893]), array([58.75464535]), array([59.97209382]), array([52.95183747]), array([57.63042741]), array([55.70276327]), array([68.09067076]), array([75.27673576]), array([75.24657444]), array([62.01752509]), array([82.52812971]), array([79.31246218]), array([78.42592752]), array([77.8452931]), array([78.25235363]), array([54.96837205]), array([62.2249221]), array([57.97300448]), array([68.55981509])]
+2025-06-11 18:21:44,481 - Best model: KNNCa1, acc = [82.52812971]
+2025-06-11 18:21:44,513 - Cargando el modulo desde: modulo/model_load/KNNCa1.joblib
+2025-06-11 18:21:53,823 - ---- stage2_detection end ----
+2025-06-11 18:23:08,838 - Ciclo 4 - Iniciando detección entre modulo/capturas/flow_analysis_cycle_3.binetflow y modulo/capturas/flow_analysis_cycle_4.binetflow (ejecutar_stage3=True)
+2025-06-11 18:23:08,840 - ---- inicializando con: modulo/capturas/flow_analysis_cycle_3.binetflow
+2025-06-11 18:23:08,841 - ---- stage1_detection start ----
+2025-06-11 18:23:09,149 - Varianza explicada: [0.48446839 0.33130469 0.08096584 0.05555882 0.01987281 0.0088809
+ 0.00815667]
+2025-06-11 18:23:10,206 - Metrics: [13.466169561603873, -2060.100215111615, 3.0752197507254384, 0.4813768826479932, 51.26534592558605, 0.13229223650966807, 0.20580720937057298]
+2025-06-11 18:23:48,924 - Modelos Voting construídos
+2025-06-11 18:23:49,052 - Clasificacion con models voting realizada
+2025-06-11 18:23:49,054 - 0
+0.0    10
+1.0     5
+Name: count, dtype: int64
+2025-06-11 18:23:49,055 - ---- stage1_detection end ----
+2025-06-11 18:23:49,055 - ---- stage2_detection start ----
+2025-06-11 18:23:49,055 - 13.466169561603873,-2060.100215111615,3.0752197507254384,0.4813768826479932,51.26534592558605,0.13229223650966807,0.20580720937057298
+2025-06-11 18:23:49,057 - Added row to database
+2025-06-11 18:23:49,057 - ---- stage2_detection end ----
+2025-06-11 18:23:49,057 - ---- stage3_detection start ----
+2025-06-11 18:23:49,148 - ---- inicializando con: modulo/capturas/archivos_filtrados/flow_analysis_cycle_4_filtered.binetflow
+2025-06-11 18:23:49,148 - Inicializando meta-componente
+
+2025-06-11 18:23:49,148 - Calculando métricas
+
+2025-06-11 18:23:50,161 - Metrics: [13.466169561603873, -2060.100215111615, 3.0752197507254384, 0.4813768826479932, 51.26534592558605, 0.13229223650966807, 0.20580720937057298]
+2025-06-11 18:23:50,162 - Corriendo el enfoque para asignar la etiqueta
+
+2025-06-11 18:23:50,162 - Etiqueta asignada: no bots
+2025-06-11 18:23:50,162 - Añadiendo fila a la base de hechos
+
+2025-06-11 18:23:50,162 - 13.466169561603873,-2060.100215111615,3.0752197507254384,0.4813768826479932,51.26534592558605,0.13229223650966807,0.20580720937057298,0
+2025-06-11 18:23:50,163 - Added row to database
+2025-06-11 18:23:50,163 - ---- stage3_detection end ----

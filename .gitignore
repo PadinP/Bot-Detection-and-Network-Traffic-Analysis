@@ -7,7 +7,6 @@ __pycache__/
 env/
 
 # Archivos y dependencias de FastAPI
-*.log
 *.sqlite
 instance/
 .env
@@ -22,5 +21,7 @@ instance/
 # Ignorar carpetas específicas con todo su contenido
 modulo/model_load/** 
 modulo/model_selector/** 
-/modulo/database-preprosesing/
+modulo/database-preprosesing/**
 
+# Ignorar archivos de logs
+modulo/capturas/logs/bto_logs.log

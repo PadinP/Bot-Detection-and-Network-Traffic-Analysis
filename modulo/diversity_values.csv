@@ -1,247 +1,247 @@
-['LR', 'CART'];0.0;nan;0.0;0.14
-['LR', 'NAIVE'];0.01;-0.35;-0.91;0.61
-['LR', 'KNN'];0.02;0.23;0.79;0.14
-['LR', 'SGD'];0.01;-0.35;-0.91;0.61
-['LR', 'SVC'];0.13;0.78;0.99;0.06
-['LR', 'MLP'];0.02;-0.02;-0.07;0.24
-['LR', 'EXTRA'];0.0;nan;0.0;0.14
-['CART', 'NAIVE'];0.0;nan;0.0;0.49
+['LR', 'CART'];0.0;nan;0.0;0.16
+['LR', 'NAIVE'];0.01;-0.37;-0.92;0.62
+['LR', 'KNN'];0.02;0.27;0.85;0.15
+['LR', 'SGD'];0.05;-0.15;-0.41;0.56
+['LR', 'SVC'];0.15;0.83;0.99;0.05
+['LR', 'MLP'];0.07;0.44;0.87;0.13
+['LR', 'EXTRA'];0.0;nan;0.0;0.16
+['CART', 'NAIVE'];0.0;nan;0.0;0.48
 ['CART', 'KNN'];0.0;nan;0.0;0.04
-['CART', 'SGD'];0.0;nan;0.0;0.49
+['CART', 'SGD'];0.0;nan;0.0;0.51
 ['CART', 'SVC'];0.0;nan;0.0;0.18
-['CART', 'MLP'];0.0;nan;0.0;0.13
+['CART', 'MLP'];0.0;nan;0.0;0.11
 ['CART', 'EXTRA'];0.0;nan;0.0;0.0
-['NAIVE', 'KNN'];0.01;-0.06;-0.32;0.5
-['NAIVE', 'SGD'];0.49;1.0;1.0;0.0
+['NAIVE', 'KNN'];0.01;-0.06;-0.31;0.5
+['NAIVE', 'SGD'];0.47;0.88;0.99;0.06
 ['NAIVE', 'SVC'];0.0;-0.46;-1.0;0.67
-['NAIVE', 'MLP'];0.11;0.29;0.8;0.39
-['NAIVE', 'EXTRA'];0.0;nan;0.0;0.49
-['KNN', 'SGD'];0.01;-0.06;-0.32;0.5
-['KNN', 'SVC'];0.02;0.25;0.82;0.17
-['KNN', 'MLP'];0.02;0.25;0.82;0.12
+['NAIVE', 'MLP'];0.02;-0.19;-0.6;0.55
+['NAIVE', 'EXTRA'];0.0;nan;0.0;0.48
+['KNN', 'SGD'];0.01;-0.07;-0.37;0.52
+['KNN', 'SVC'];0.02;0.24;0.82;0.17
+['KNN', 'MLP'];0.03;0.41;0.95;0.09
 ['KNN', 'EXTRA'];0.0;nan;0.0;0.04
-['SGD', 'SVC'];0.0;-0.46;-1.0;0.67
-['SGD', 'MLP'];0.11;0.29;0.8;0.39
-['SGD', 'EXTRA'];0.0;nan;0.0;0.49
-['SVC', 'MLP'];0.02;-0.05;-0.22;0.28
+['SGD', 'SVC'];0.04;-0.25;-0.61;0.6
+['SGD', 'MLP'];0.02;-0.24;-0.7;0.58
+['SGD', 'EXTRA'];0.0;nan;0.0;0.51
+['SVC', 'MLP'];0.08;0.46;0.88;0.14
 ['SVC', 'EXTRA'];0.0;nan;0.0;0.18
-['MLP', 'EXTRA'];0.0;nan;0.0;0.13
-['LR', 'CART', 'NAIVE'];0.0;nan;-0.3;0.41
-['LR', 'CART', 'KNN'];0.01;nan;0.26;0.11
-['LR', 'CART', 'SGD'];0.0;nan;-0.3;0.41
-['LR', 'CART', 'SVC'];0.04;nan;0.33;0.13
-['LR', 'CART', 'MLP'];0.01;nan;-0.02;0.17
+['MLP', 'EXTRA'];0.0;nan;0.0;0.11
+['LR', 'CART', 'NAIVE'];0.0;nan;-0.31;0.42
+['LR', 'CART', 'KNN'];0.01;nan;0.28;0.11
+['LR', 'CART', 'SGD'];0.02;nan;-0.14;0.41
+['LR', 'CART', 'SVC'];0.05;nan;0.33;0.13
+['LR', 'CART', 'MLP'];0.02;nan;0.29;0.13
 ['LR', 'CART', 'EXTRA'];0.0;nan;0.0;0.1
-['LR', 'NAIVE', 'KNN'];0.01;-0.06;-0.15;0.42
-['LR', 'NAIVE', 'SGD'];0.17;0.1;-0.27;0.41
-['LR', 'NAIVE', 'SVC'];0.05;-0.01;-0.31;0.45
-['LR', 'NAIVE', 'MLP'];0.05;-0.02;-0.06;0.41
-['LR', 'NAIVE', 'EXTRA'];0.0;nan;-0.3;0.41
-['LR', 'KNN', 'SGD'];0.01;-0.06;-0.15;0.42
-['LR', 'KNN', 'SVC'];0.06;0.42;0.87;0.12
-['LR', 'KNN', 'MLP'];0.02;0.16;0.51;0.17
-['LR', 'KNN', 'EXTRA'];0.01;nan;0.26;0.11
-['LR', 'SGD', 'SVC'];0.05;-0.01;-0.31;0.45
-['LR', 'SGD', 'MLP'];0.05;-0.02;-0.06;0.41
-['LR', 'SGD', 'EXTRA'];0.0;nan;-0.3;0.41
-['LR', 'SVC', 'MLP'];0.05;0.24;0.23;0.19
-['LR', 'SVC', 'EXTRA'];0.04;nan;0.33;0.13
-['LR', 'MLP', 'EXTRA'];0.01;nan;-0.02;0.17
-['CART', 'NAIVE', 'KNN'];0.0;nan;-0.11;0.34
-['CART', 'NAIVE', 'SGD'];0.16;nan;0.33;0.32
+['LR', 'NAIVE', 'KNN'];0.01;-0.05;-0.13;0.42
+['LR', 'NAIVE', 'SGD'];0.18;0.12;-0.11;0.42
+['LR', 'NAIVE', 'SVC'];0.05;0.0;-0.31;0.45
+['LR', 'NAIVE', 'MLP'];0.03;-0.04;-0.22;0.44
+['LR', 'NAIVE', 'EXTRA'];0.0;nan;-0.31;0.42
+['LR', 'KNN', 'SGD'];0.03;0.02;0.02;0.41
+['LR', 'KNN', 'SVC'];0.06;0.45;0.89;0.12
+['LR', 'KNN', 'MLP'];0.04;0.37;0.89;0.12
+['LR', 'KNN', 'EXTRA'];0.01;nan;0.28;0.11
+['LR', 'SGD', 'SVC'];0.08;0.14;-0.01;0.41
+['LR', 'SGD', 'MLP'];0.05;0.02;-0.08;0.43
+['LR', 'SGD', 'EXTRA'];0.02;nan;-0.14;0.41
+['LR', 'SVC', 'MLP'];0.1;0.58;0.91;0.11
+['LR', 'SVC', 'EXTRA'];0.05;nan;0.33;0.13
+['LR', 'MLP', 'EXTRA'];0.02;nan;0.29;0.13
+['CART', 'NAIVE', 'KNN'];0.0;nan;-0.1;0.34
+['CART', 'NAIVE', 'SGD'];0.16;nan;0.33;0.35
 ['CART', 'NAIVE', 'SVC'];0.0;nan;-0.33;0.44
-['CART', 'NAIVE', 'MLP'];0.04;nan;0.27;0.33
+['CART', 'NAIVE', 'MLP'];0.01;nan;-0.2;0.38
 ['CART', 'NAIVE', 'EXTRA'];0.0;nan;0.0;0.32
-['CART', 'KNN', 'SGD'];0.0;nan;-0.11;0.34
+['CART', 'KNN', 'SGD'];0.0;nan;-0.12;0.36
 ['CART', 'KNN', 'SVC'];0.01;nan;0.27;0.13
-['CART', 'KNN', 'MLP'];0.01;nan;0.27;0.1
+['CART', 'KNN', 'MLP'];0.01;nan;0.32;0.08
 ['CART', 'KNN', 'EXTRA'];0.0;nan;0.0;0.02
-['CART', 'SGD', 'SVC'];0.0;nan;-0.33;0.44
-['CART', 'SGD', 'MLP'];0.04;nan;0.27;0.33
-['CART', 'SGD', 'EXTRA'];0.0;nan;0.0;0.32
-['CART', 'SVC', 'MLP'];0.01;nan;-0.07;0.19
+['CART', 'SGD', 'SVC'];0.01;nan;-0.2;0.43
+['CART', 'SGD', 'MLP'];0.01;nan;-0.23;0.4
+['CART', 'SGD', 'EXTRA'];0.0;nan;0.0;0.34
+['CART', 'SVC', 'MLP'];0.03;nan;0.29;0.15
 ['CART', 'SVC', 'EXTRA'];0.0;nan;0.0;0.12
-['CART', 'MLP', 'EXTRA'];0.0;nan;0.0;0.09
-['NAIVE', 'KNN', 'SGD'];0.17;0.29;0.12;0.33
+['CART', 'MLP', 'EXTRA'];0.0;nan;0.0;0.08
+['NAIVE', 'KNN', 'SGD'];0.16;0.25;0.1;0.36
 ['NAIVE', 'KNN', 'SVC'];0.01;-0.09;-0.16;0.44
-['NAIVE', 'KNN', 'MLP'];0.05;0.16;0.43;0.34
-['NAIVE', 'KNN', 'EXTRA'];0.0;nan;-0.11;0.34
-['NAIVE', 'SGD', 'SVC'];0.16;0.03;-0.33;0.44
-['NAIVE', 'SGD', 'MLP'];0.24;0.53;0.87;0.26
-['NAIVE', 'SGD', 'EXTRA'];0.16;nan;0.33;0.32
-['NAIVE', 'SVC', 'MLP'];0.04;-0.07;-0.14;0.44
+['NAIVE', 'KNN', 'MLP'];0.02;0.05;0.01;0.38
+['NAIVE', 'KNN', 'EXTRA'];0.0;nan;-0.1;0.34
+['NAIVE', 'SGD', 'SVC'];0.17;0.06;-0.21;0.44
+['NAIVE', 'SGD', 'MLP'];0.17;0.15;-0.1;0.4
+['NAIVE', 'SGD', 'EXTRA'];0.16;nan;0.33;0.35
+['NAIVE', 'SVC', 'MLP'];0.03;-0.06;-0.24;0.45
 ['NAIVE', 'SVC', 'EXTRA'];0.0;nan;-0.33;0.44
-['NAIVE', 'MLP', 'EXTRA'];0.04;nan;0.27;0.33
-['KNN', 'SGD', 'SVC'];0.01;-0.09;-0.16;0.44
-['KNN', 'SGD', 'MLP'];0.05;0.16;0.43;0.34
-['KNN', 'SGD', 'EXTRA'];0.0;nan;-0.11;0.34
-['KNN', 'SVC', 'MLP'];0.02;0.15;0.47;0.19
+['NAIVE', 'MLP', 'EXTRA'];0.01;nan;-0.2;0.38
+['KNN', 'SGD', 'SVC'];0.03;-0.03;-0.05;0.43
+['KNN', 'SGD', 'MLP'];0.02;0.03;-0.04;0.4
+['KNN', 'SGD', 'EXTRA'];0.0;nan;-0.12;0.36
+['KNN', 'SVC', 'MLP'];0.04;0.37;0.88;0.13
 ['KNN', 'SVC', 'EXTRA'];0.01;nan;0.27;0.13
-['KNN', 'MLP', 'EXTRA'];0.01;nan;0.27;0.1
-['SGD', 'SVC', 'MLP'];0.04;-0.07;-0.14;0.44
-['SGD', 'SVC', 'EXTRA'];0.0;nan;-0.33;0.44
-['SGD', 'MLP', 'EXTRA'];0.04;nan;0.27;0.33
-['SVC', 'MLP', 'EXTRA'];0.01;nan;-0.07;0.19
-['LR', 'CART', 'NAIVE', 'KNN'];0.01;nan;-0.07;0.32
-['LR', 'CART', 'NAIVE', 'SGD'];0.08;nan;-0.14;0.39
-['LR', 'CART', 'NAIVE', 'SVC'];0.02;nan;-0.15;0.36
-['LR', 'CART', 'NAIVE', 'MLP'];0.02;nan;-0.03;0.33
-['LR', 'CART', 'NAIVE', 'EXTRA'];0.0;nan;-0.15;0.31
-['LR', 'CART', 'KNN', 'SGD'];0.01;nan;-0.07;0.32
-['LR', 'CART', 'KNN', 'SVC'];0.03;nan;0.43;0.12
-['LR', 'CART', 'KNN', 'MLP'];0.01;nan;0.26;0.14
-['LR', 'CART', 'KNN', 'EXTRA'];0.0;nan;0.13;0.08
-['LR', 'CART', 'SGD', 'SVC'];0.02;nan;-0.15;0.36
-['LR', 'CART', 'SGD', 'MLP'];0.02;nan;-0.03;0.33
-['LR', 'CART', 'SGD', 'EXTRA'];0.0;nan;-0.15;0.31
-['LR', 'CART', 'SVC', 'MLP'];0.03;nan;0.12;0.17
-['LR', 'CART', 'SVC', 'EXTRA'];0.02;nan;0.16;0.12
-['LR', 'CART', 'MLP', 'EXTRA'];0.0;nan;-0.01;0.13
-['LR', 'NAIVE', 'KNN', 'SGD'];0.09;0.07;-0.11;0.39
-['LR', 'NAIVE', 'KNN', 'SVC'];0.03;0.06;0.06;0.36
-['LR', 'NAIVE', 'KNN', 'MLP'];0.03;0.06;0.18;0.33
-['LR', 'NAIVE', 'KNN', 'EXTRA'];0.01;nan;-0.07;0.32
-['LR', 'NAIVE', 'SGD', 'SVC'];0.11;0.03;-0.3;0.44
-['LR', 'NAIVE', 'SGD', 'MLP'];0.12;0.15;0.12;0.37
-['LR', 'NAIVE', 'SGD', 'EXTRA'];0.08;nan;-0.14;0.39
-['LR', 'NAIVE', 'SVC', 'MLP'];0.05;0.03;-0.07;0.37
-['LR', 'NAIVE', 'SVC', 'EXTRA'];0.02;nan;-0.15;0.36
-['LR', 'NAIVE', 'MLP', 'EXTRA'];0.02;nan;-0.03;0.33
-['LR', 'KNN', 'SGD', 'SVC'];0.03;0.06;0.06;0.36
-['LR', 'KNN', 'SGD', 'MLP'];0.03;0.06;0.18;0.33
-['LR', 'KNN', 'SGD', 'EXTRA'];0.01;nan;-0.07;0.32
-['LR', 'KNN', 'SVC', 'MLP'];0.04;0.24;0.52;0.17
-['LR', 'KNN', 'SVC', 'EXTRA'];0.03;nan;0.43;0.12
-['LR', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.26;0.14
-['LR', 'SGD', 'SVC', 'MLP'];0.05;0.03;-0.07;0.37
-['LR', 'SGD', 'SVC', 'EXTRA'];0.02;nan;-0.15;0.36
-['LR', 'SGD', 'MLP', 'EXTRA'];0.02;nan;-0.03;0.33
-['LR', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.12;0.17
-['CART', 'NAIVE', 'KNN', 'SGD'];0.09;nan;0.06;0.33
+['KNN', 'MLP', 'EXTRA'];0.01;nan;0.32;0.08
+['SGD', 'SVC', 'MLP'];0.05;-0.01;-0.14;0.44
+['SGD', 'SVC', 'EXTRA'];0.01;nan;-0.2;0.43
+['SGD', 'MLP', 'EXTRA'];0.01;nan;-0.23;0.4
+['SVC', 'MLP', 'EXTRA'];0.03;nan;0.29;0.15
+['LR', 'CART', 'NAIVE', 'KNN'];0.01;nan;-0.06;0.32
+['LR', 'CART', 'NAIVE', 'SGD'];0.09;nan;-0.06;0.4
+['LR', 'CART', 'NAIVE', 'SVC'];0.03;nan;-0.15;0.36
+['LR', 'CART', 'NAIVE', 'MLP'];0.02;nan;-0.11;0.34
+['LR', 'CART', 'NAIVE', 'EXTRA'];0.0;nan;-0.15;0.32
+['LR', 'CART', 'KNN', 'SGD'];0.01;nan;0.01;0.32
+['LR', 'CART', 'KNN', 'SVC'];0.03;nan;0.44;0.12
+['LR', 'CART', 'KNN', 'MLP'];0.02;nan;0.44;0.11
+['LR', 'CART', 'KNN', 'EXTRA'];0.0;nan;0.14;0.09
+['LR', 'CART', 'SGD', 'SVC'];0.04;nan;-0.0;0.34
+['LR', 'CART', 'SGD', 'MLP'];0.02;nan;-0.04;0.34
+['LR', 'CART', 'SGD', 'EXTRA'];0.01;nan;-0.07;0.32
+['LR', 'CART', 'SVC', 'MLP'];0.05;nan;0.46;0.13
+['LR', 'CART', 'SVC', 'EXTRA'];0.02;nan;0.17;0.12
+['LR', 'CART', 'MLP', 'EXTRA'];0.01;nan;0.14;0.11
+['LR', 'NAIVE', 'KNN', 'SGD'];0.1;0.08;-0.03;0.4
+['LR', 'NAIVE', 'KNN', 'SVC'];0.04;0.08;0.07;0.36
+['LR', 'NAIVE', 'KNN', 'MLP'];0.03;0.08;0.14;0.34
+['LR', 'NAIVE', 'KNN', 'EXTRA'];0.01;nan;-0.06;0.32
+['LR', 'NAIVE', 'SGD', 'SVC'];0.12;0.08;-0.16;0.43
+['LR', 'NAIVE', 'SGD', 'MLP'];0.11;0.06;-0.13;0.42
+['LR', 'NAIVE', 'SGD', 'EXTRA'];0.09;nan;-0.06;0.4
+['LR', 'NAIVE', 'SVC', 'MLP'];0.05;0.12;0.04;0.36
+['LR', 'NAIVE', 'SVC', 'EXTRA'];0.03;nan;-0.15;0.36
+['LR', 'NAIVE', 'MLP', 'EXTRA'];0.02;nan;-0.11;0.34
+['LR', 'KNN', 'SGD', 'SVC'];0.05;0.15;0.21;0.34
+['LR', 'KNN', 'SGD', 'MLP'];0.03;0.11;0.2;0.34
+['LR', 'KNN', 'SGD', 'EXTRA'];0.01;nan;0.01;0.32
+['LR', 'KNN', 'SVC', 'MLP'];0.06;0.44;0.89;0.12
+['LR', 'KNN', 'SVC', 'EXTRA'];0.03;nan;0.44;0.12
+['LR', 'KNN', 'MLP', 'EXTRA'];0.02;nan;0.44;0.11
+['LR', 'SGD', 'SVC', 'MLP'];0.07;0.18;0.17;0.35
+['LR', 'SGD', 'SVC', 'EXTRA'];0.04;nan;-0.0;0.34
+['LR', 'SGD', 'MLP', 'EXTRA'];0.02;nan;-0.04;0.34
+['LR', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.46;0.13
+['CART', 'NAIVE', 'KNN', 'SGD'];0.08;nan;0.05;0.35
 ['CART', 'NAIVE', 'KNN', 'SVC'];0.01;nan;-0.08;0.34
-['CART', 'NAIVE', 'KNN', 'MLP'];0.02;nan;0.22;0.28
+['CART', 'NAIVE', 'KNN', 'MLP'];0.01;nan;0.01;0.3
 ['CART', 'NAIVE', 'KNN', 'EXTRA'];0.0;nan;-0.05;0.26
-['CART', 'NAIVE', 'SGD', 'SVC'];0.08;nan;-0.17;0.41
-['CART', 'NAIVE', 'SGD', 'MLP'];0.12;nan;0.43;0.31
-['CART', 'NAIVE', 'SGD', 'EXTRA'];0.08;nan;0.17;0.32
-['CART', 'NAIVE', 'SVC', 'MLP'];0.02;nan;-0.07;0.35
+['CART', 'NAIVE', 'SGD', 'SVC'];0.09;nan;-0.1;0.42
+['CART', 'NAIVE', 'SGD', 'MLP'];0.09;nan;-0.05;0.38
+['CART', 'NAIVE', 'SGD', 'EXTRA'];0.08;nan;0.17;0.34
+['CART', 'NAIVE', 'SVC', 'MLP'];0.02;nan;-0.12;0.36
 ['CART', 'NAIVE', 'SVC', 'EXTRA'];0.0;nan;-0.17;0.33
-['CART', 'NAIVE', 'MLP', 'EXTRA'];0.02;nan;0.13;0.27
-['CART', 'KNN', 'SGD', 'SVC'];0.01;nan;-0.08;0.34
-['CART', 'KNN', 'SGD', 'MLP'];0.02;nan;0.22;0.28
-['CART', 'KNN', 'SGD', 'EXTRA'];0.0;nan;-0.05;0.26
-['CART', 'KNN', 'SVC', 'MLP'];0.01;nan;0.24;0.15
+['CART', 'NAIVE', 'MLP', 'EXTRA'];0.0;nan;-0.1;0.29
+['CART', 'KNN', 'SGD', 'SVC'];0.01;nan;-0.03;0.34
+['CART', 'KNN', 'SGD', 'MLP'];0.01;nan;-0.02;0.31
+['CART', 'KNN', 'SGD', 'EXTRA'];0.0;nan;-0.06;0.27
+['CART', 'KNN', 'SVC', 'MLP'];0.02;nan;0.44;0.12
 ['CART', 'KNN', 'SVC', 'EXTRA'];0.0;nan;0.14;0.1
-['CART', 'KNN', 'MLP', 'EXTRA'];0.0;nan;0.14;0.08
-['CART', 'SGD', 'SVC', 'MLP'];0.02;nan;-0.07;0.35
-['CART', 'SGD', 'SVC', 'EXTRA'];0.0;nan;-0.17;0.33
-['CART', 'SGD', 'MLP', 'EXTRA'];0.02;nan;0.13;0.27
-['CART', 'SVC', 'MLP', 'EXTRA'];0.0;nan;-0.04;0.15
-['NAIVE', 'KNN', 'SGD', 'SVC'];0.09;0.04;-0.14;0.42
-['NAIVE', 'KNN', 'SGD', 'MLP'];0.13;0.29;0.46;0.32
-['NAIVE', 'KNN', 'SGD', 'EXTRA'];0.09;nan;0.06;0.33
-['NAIVE', 'KNN', 'SVC', 'MLP'];0.03;0.04;0.15;0.35
+['CART', 'KNN', 'MLP', 'EXTRA'];0.0;nan;0.16;0.07
+['CART', 'SGD', 'SVC', 'MLP'];0.02;nan;-0.07;0.36
+['CART', 'SGD', 'SVC', 'EXTRA'];0.01;nan;-0.1;0.33
+['CART', 'SGD', 'MLP', 'EXTRA'];0.0;nan;-0.12;0.31
+['CART', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.15;0.12
+['NAIVE', 'KNN', 'SGD', 'SVC'];0.09;0.05;-0.08;0.42
+['NAIVE', 'KNN', 'SGD', 'MLP'];0.09;0.12;-0.01;0.38
+['NAIVE', 'KNN', 'SGD', 'EXTRA'];0.08;nan;0.05;0.35
+['NAIVE', 'KNN', 'SVC', 'MLP'];0.03;0.07;0.12;0.35
 ['NAIVE', 'KNN', 'SVC', 'EXTRA'];0.01;nan;-0.08;0.34
-['NAIVE', 'KNN', 'MLP', 'EXTRA'];0.02;nan;0.22;0.28
-['NAIVE', 'SGD', 'SVC', 'MLP'];0.12;0.1;0.06;0.4
-['NAIVE', 'SGD', 'SVC', 'EXTRA'];0.08;nan;-0.17;0.41
-['NAIVE', 'SGD', 'MLP', 'EXTRA'];0.12;nan;0.43;0.31
-['NAIVE', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.07;0.35
-['KNN', 'SGD', 'SVC', 'MLP'];0.03;0.04;0.15;0.35
-['KNN', 'SGD', 'SVC', 'EXTRA'];0.01;nan;-0.08;0.34
-['KNN', 'SGD', 'MLP', 'EXTRA'];0.02;nan;0.22;0.28
-['KNN', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.24;0.15
-['SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.07;0.35
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD'];0.05;nan;-0.07;0.35
+['NAIVE', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.01;0.3
+['NAIVE', 'SGD', 'SVC', 'MLP'];0.11;0.03;-0.17;0.43
+['NAIVE', 'SGD', 'SVC', 'EXTRA'];0.09;nan;-0.1;0.42
+['NAIVE', 'SGD', 'MLP', 'EXTRA'];0.09;nan;-0.05;0.38
+['NAIVE', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.12;0.36
+['KNN', 'SGD', 'SVC', 'MLP'];0.03;0.09;0.16;0.35
+['KNN', 'SGD', 'SVC', 'EXTRA'];0.01;nan;-0.03;0.34
+['KNN', 'SGD', 'MLP', 'EXTRA'];0.01;nan;-0.02;0.31
+['KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.44;0.12
+['SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.07;0.36
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD'];0.06;nan;-0.02;0.36
 ['LR', 'CART', 'NAIVE', 'KNN', 'SVC'];0.02;nan;0.04;0.3
-['LR', 'CART', 'NAIVE', 'KNN', 'MLP'];0.02;nan;0.11;0.28
+['LR', 'CART', 'NAIVE', 'KNN', 'MLP'];0.02;nan;0.08;0.28
 ['LR', 'CART', 'NAIVE', 'KNN', 'EXTRA'];0.0;nan;-0.04;0.26
-['LR', 'CART', 'NAIVE', 'SGD', 'SVC'];0.06;nan;-0.18;0.39
-['LR', 'CART', 'NAIVE', 'SGD', 'MLP'];0.07;nan;0.07;0.35
-['LR', 'CART', 'NAIVE', 'SGD', 'EXTRA'];0.05;nan;-0.08;0.35
-['LR', 'CART', 'NAIVE', 'SVC', 'MLP'];0.03;nan;-0.04;0.32
-['LR', 'CART', 'NAIVE', 'SVC', 'EXTRA'];0.01;nan;-0.09;0.3
-['LR', 'CART', 'NAIVE', 'MLP', 'EXTRA'];0.01;nan;-0.02;0.28
-['LR', 'CART', 'KNN', 'SGD', 'SVC'];0.02;nan;0.04;0.3
-['LR', 'CART', 'KNN', 'SGD', 'MLP'];0.02;nan;0.11;0.28
-['LR', 'CART', 'KNN', 'SGD', 'EXTRA'];0.0;nan;-0.04;0.26
-['LR', 'CART', 'KNN', 'SVC', 'MLP'];0.02;nan;0.31;0.15
-['LR', 'CART', 'KNN', 'SVC', 'EXTRA'];0.02;nan;0.26;0.11
-['LR', 'CART', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.15;0.11
-['LR', 'CART', 'SGD', 'SVC', 'MLP'];0.03;nan;-0.04;0.32
-['LR', 'CART', 'SGD', 'SVC', 'EXTRA'];0.01;nan;-0.09;0.3
+['LR', 'CART', 'NAIVE', 'SGD', 'SVC'];0.07;nan;-0.1;0.39
+['LR', 'CART', 'NAIVE', 'SGD', 'MLP'];0.06;nan;-0.08;0.38
+['LR', 'CART', 'NAIVE', 'SGD', 'EXTRA'];0.05;nan;-0.03;0.36
+['LR', 'CART', 'NAIVE', 'SVC', 'MLP'];0.03;nan;0.02;0.31
+['LR', 'CART', 'NAIVE', 'SVC', 'EXTRA'];0.02;nan;-0.09;0.3
+['LR', 'CART', 'NAIVE', 'MLP', 'EXTRA'];0.01;nan;-0.06;0.28
+['LR', 'CART', 'KNN', 'SGD', 'SVC'];0.03;nan;0.13;0.29
+['LR', 'CART', 'KNN', 'SGD', 'MLP'];0.02;nan;0.12;0.29
+['LR', 'CART', 'KNN', 'SGD', 'EXTRA'];0.01;nan;0.01;0.26
+['LR', 'CART', 'KNN', 'SVC', 'MLP'];0.04;nan;0.54;0.12
+['LR', 'CART', 'KNN', 'SVC', 'EXTRA'];0.02;nan;0.27;0.11
+['LR', 'CART', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.27;0.1
+['LR', 'CART', 'SGD', 'SVC', 'MLP'];0.04;nan;0.1;0.3
+['LR', 'CART', 'SGD', 'SVC', 'EXTRA'];0.02;nan;-0.0;0.29
 ['LR', 'CART', 'SGD', 'MLP', 'EXTRA'];0.01;nan;-0.02;0.28
-['LR', 'CART', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.07;0.15
-['LR', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.07;0.05;-0.09;0.39
-['LR', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.08;0.12;0.17;0.35
-['LR', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.05;nan;-0.07;0.35
-['LR', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.04;0.09;0.17;0.32
+['LR', 'CART', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.27;0.12
+['LR', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.08;0.09;0.0;0.39
+['LR', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.07;0.09;0.03;0.38
+['LR', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.06;nan;-0.02;0.36
+['LR', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.04;0.16;0.25;0.31
 ['LR', 'NAIVE', 'KNN', 'SVC', 'EXTRA'];0.02;nan;0.04;0.3
-['LR', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.02;nan;0.11;0.28
-['LR', 'NAIVE', 'SGD', 'SVC', 'MLP'];0.09;0.07;-0.05;0.39
-['LR', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.06;nan;-0.18;0.39
-['LR', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.07;nan;0.07;0.35
-['LR', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.03;nan;-0.04;0.32
-['LR', 'KNN', 'SGD', 'SVC', 'MLP'];0.04;0.09;0.17;0.32
-['LR', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.02;nan;0.04;0.3
-['LR', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.02;nan;0.11;0.28
-['LR', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.31;0.15
-['LR', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.03;nan;-0.04;0.32
-['CART', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.05;nan;-0.08;0.37
-['CART', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.08;nan;0.28;0.3
-['CART', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.05;nan;0.04;0.3
-['CART', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.02;nan;0.09;0.3
+['LR', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.02;nan;0.08;0.28
+['LR', 'NAIVE', 'SGD', 'SVC', 'MLP'];0.09;0.09;-0.05;0.4
+['LR', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.07;nan;-0.1;0.39
+['LR', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.06;nan;-0.08;0.38
+['LR', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.02;0.31
+['LR', 'KNN', 'SGD', 'SVC', 'MLP'];0.05;0.19;0.33;0.3
+['LR', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.03;nan;0.13;0.29
+['LR', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.02;nan;0.12;0.29
+['LR', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.04;nan;0.54;0.12
+['LR', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;0.1;0.3
+['CART', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.06;nan;-0.05;0.37
+['CART', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.06;nan;-0.0;0.35
+['CART', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.05;nan;0.03;0.31
+['CART', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.02;nan;0.07;0.29
 ['CART', 'NAIVE', 'KNN', 'SVC', 'EXTRA'];0.0;nan;-0.05;0.27
-['CART', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.13;0.23
-['CART', 'NAIVE', 'SGD', 'SVC', 'MLP'];0.07;nan;0.04;0.37
-['CART', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.05;nan;-0.1;0.36
-['CART', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.07;nan;0.26;0.3
-['CART', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.01;nan;-0.04;0.29
-['CART', 'KNN', 'SGD', 'SVC', 'MLP'];0.02;nan;0.09;0.3
-['CART', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.0;nan;-0.05;0.27
-['CART', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.01;nan;0.13;0.23
-['CART', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.14;0.13
+['CART', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.0;0.24
+['CART', 'NAIVE', 'SGD', 'SVC', 'MLP'];0.06;nan;-0.1;0.39
+['CART', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.05;nan;-0.06;0.37
+['CART', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.05;nan;-0.03;0.34
+['CART', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.01;nan;-0.07;0.29
+['CART', 'KNN', 'SGD', 'SVC', 'MLP'];0.02;nan;0.1;0.3
+['CART', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.01;nan;-0.02;0.28
+['CART', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.01;nan;-0.01;0.25
+['CART', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.26;0.11
 ['CART', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.01;nan;-0.04;0.29
-['NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.08;0.1;0.14;0.37
-['NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.05;nan;-0.08;0.37
-['NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.08;nan;0.28;0.3
-['NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.09;0.3
-['NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.07;nan;0.04;0.37
-['KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.09;0.3
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.05;nan;-0.06;0.35
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.05;nan;0.11;0.32
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.04;nan;-0.04;0.31
-['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.02;nan;0.11;0.28
-['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'EXTRA'];0.01;nan;0.02;0.26
-['LR', 'CART', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.07;0.24
+['NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.07;0.07;0.01;0.39
+['NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.06;nan;-0.05;0.37
+['NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.06;nan;-0.0;0.35
+['NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.07;0.29
+['NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.06;nan;-0.1;0.39
+['KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.1;0.3
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC'];0.05;nan;0.0;0.35
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'MLP'];0.05;nan;0.02;0.34
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'EXTRA'];0.04;nan;-0.01;0.32
+['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'MLP'];0.03;nan;0.17;0.27
+['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'EXTRA'];0.01;nan;0.03;0.26
+['LR', 'CART', 'NAIVE', 'KNN', 'MLP', 'EXTRA'];0.01;nan;0.06;0.24
 ['LR', 'CART', 'NAIVE', 'SGD', 'SVC', 'MLP'];0.06;nan;-0.03;0.36
-['LR', 'CART', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.04;nan;-0.12;0.35
-['LR', 'CART', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.05;nan;0.05;0.32
-['LR', 'CART', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.03;0.27
-['LR', 'CART', 'KNN', 'SGD', 'SVC', 'MLP'];0.02;nan;0.11;0.28
-['LR', 'CART', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.01;nan;0.02;0.26
-['LR', 'CART', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.01;nan;0.07;0.24
-['LR', 'CART', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.21;0.13
-['LR', 'CART', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;-0.03;0.27
-['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.07;0.09;0.08;0.36
-['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.05;nan;-0.06;0.35
-['LR', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.05;nan;0.11;0.32
-['LR', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.11;0.28
+['LR', 'CART', 'NAIVE', 'SGD', 'SVC', 'EXTRA'];0.05;nan;-0.06;0.35
+['LR', 'CART', 'NAIVE', 'SGD', 'MLP', 'EXTRA'];0.04;nan;-0.05;0.34
+['LR', 'CART', 'NAIVE', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.01;0.27
+['LR', 'CART', 'KNN', 'SGD', 'SVC', 'MLP'];0.03;nan;0.22;0.27
+['LR', 'CART', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.02;nan;0.09;0.26
+['LR', 'CART', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.01;nan;0.08;0.25
+['LR', 'CART', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.36;0.11
+['LR', 'CART', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.07;0.27
+['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.07;0.12;0.1;0.36
+['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.05;nan;0.0;0.35
+['LR', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.05;nan;0.02;0.34
+['LR', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.17;0.27
 ['LR', 'NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.06;nan;-0.03;0.36
-['LR', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.11;0.28
-['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.05;nan;0.09;0.33
-['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.04;nan;-0.05;0.33
-['CART', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.05;nan;0.19;0.28
-['CART', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.06;0.25
-['CART', 'NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.03;0.33
+['LR', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.22;0.27
+['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.05;nan;0.0;0.35
+['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.04;nan;-0.03;0.33
+['CART', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.04;nan;-0.0;0.31
+['CART', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.05;0.25
+['CART', 'NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;-0.07;0.35
 ['CART', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.01;nan;0.06;0.25
-['NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.09;0.33
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.05;nan;0.06;0.32
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.03;nan;-0.04;0.31
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.04;nan;0.08;0.29
-['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.08;0.24
-['LR', 'CART', 'NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;-0.02;0.32
-['LR', 'CART', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.08;0.24
-['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.06;0.32
-['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;0.07;0.3
-['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.05;0.3
+['NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.0;0.35
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP'];0.05;nan;0.07;0.33
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'EXTRA'];0.04;nan;0.0;0.32
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'MLP', 'EXTRA'];0.03;nan;0.02;0.3
+['LR', 'CART', 'NAIVE', 'KNN', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.12;0.24
+['LR', 'CART', 'NAIVE', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;-0.02;0.33
+['LR', 'CART', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.02;nan;0.16;0.24
+['LR', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.05;nan;0.07;0.33
+['CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.03;nan;0.0;0.31
+['LR', 'CART', 'NAIVE', 'KNN', 'SGD', 'SVC', 'MLP', 'EXTRA'];0.04;nan;0.05;0.3
