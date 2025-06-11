@@ -2,7 +2,10 @@ import joblib
 import numpy as np
 import sys
 import modulo.models as models 
+from modulo.proactive_forest import tree
 sys.modules["models"] = models
+sys.modules["proactive_forest"] = models
+sys.modules["proactive_forest.tree"] = tree
 from modulo.metric_extractor.metrics import Metric
 from modulo.files.db_handler import save_data_characterization
 from modulo.preprocessdata import preprocesssing as pre
@@ -10,6 +13,7 @@ from modulo.mlcomponent.component import Component as comp
 from modulo.model_selector.selector import Selector
 from modulo.Multiclasificador.multiclasifier import Multiclasifier
 from modulo.Facade import *
+from app.config.logger_config import detection_logger  
 
 class DetectionModule:
     def __init__(self):
@@ -20,7 +24,6 @@ class DetectionModule:
         self.data_preprocess = None
         self.data_charac = None
         self.data_explained_variance_ratio = None
-        
 
     def set_data(self, data):
         self.data = data
@@ -34,16 +37,23 @@ class DetectionModule:
         self.data_preprocess = final_data
         self.data_explained_variance_ratio = explained_variance_ratio
 
-       
-
     def select_model(self):
         self.selector.loadModels()
         modelAcc = self.selector.predict(X=self.data_charac)
+        
+        # Cuento la cantidad total de modelos
+        total_models = len(modelAcc)
+        detection_logger.info(f'Total models: {total_models}')
+        
+        # Imprimo la lista completa de precisiones
+        detection_logger.info(f'Model accuracies: {modelAcc}')
+        
+        # Selecciono el mejor modelo
         bestAcc = max(modelAcc)
         bestAccIndex = modelAcc.index(bestAcc)
         modelName = self.selector.column_names[bestAccIndex]
-        print(f'Best model: {modelName}, acc = {bestAcc}')
-        
+        detection_logger.info(f'Best model: {modelName}, acc = {bestAcc}')
+
         # Ruta relativa al archivo del modulo
         filepath = f"modulo/model_load/{modelName}.joblib"
 
@@ -53,7 +63,7 @@ class DetectionModule:
         except FileNotFoundError:
             raise FileNotFoundError(f"El archivo {filepath} no se encontró. Verifica la estructura de carpetas.")
 
-        print(f'Cargando el modulo desde: {filepath}')
+        detection_logger.info(f'Cargando el modulo desde: {filepath}')
 
     def multiclasifier_process(self):
         self.multiclasifer.setMetrics(self.data_charac)
@@ -70,13 +80,12 @@ class DetectionModule:
         component.x_positives = self.data_preprocess
         component.run_charact()
 
-
 def main():
     dm = DetectionModule()
     dm.set_data('100K.binetflow')
     dm.preprocess_data()
     dm.run_charac()
-    print('Datos preprocesados y métricas calculadas')
+    detection_logger.info('Datos preprocesados y métricas calculadas')
     
     tieneBots = dm.multiclasifier_process()
     if tieneBots == 0:
@@ -86,7 +95,7 @@ def main():
     dm.select_model()
     predictions = dm.classification_process()
     amountBots = np.sum(predictions == 1)
-    print(f'Cantidad de bots: {amountBots}')
+    detection_logger.info(f'Cantidad de bots: {amountBots}')
     dm.component_process()
 
 if __name__ == "__main__":

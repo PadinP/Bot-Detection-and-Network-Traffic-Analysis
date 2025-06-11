@@ -1,3 +1,5 @@
+from app.config.logger_config import detection_logger   
+
 def refresh_characterization_database(row):  # metodo que actualiza una fila de la base de hechos
     characterization_database = open("modulo/files/characterization_database.txt", "r+")
     lines = characterization_database.readlines()
@@ -8,11 +10,11 @@ def refresh_characterization_database(row):  # metodo que actualiza una fila de 
             lines[index] = l
             characterization_database.seek(0)
             characterization_database.writelines(lines)
-            print("Updated row to database")
+            detection_logger.info("Updated row to database")
             characterization_database.close()
             return True
         elif l[:-2] == row[:-1] and l[-2] == row[-1]:
-            print("Data already exist")
+            detection_logger.info("Data already exist")
             return True
     characterization_database.close()
     return False
@@ -29,12 +31,12 @@ def save_data_characterization(metrics_characterization):  # metodo para salvar 
     for i in metrics_characterization:
         row += str(i) + ","
     row = row[:-1]
-    print(row)
+    detection_logger.info(row)
     try:
         if not refresh_characterization_database(row):
             add_row(row)
-            print("Added row to database")
+            detection_logger.info("Added row to database")
     except:
-        print("Data base is created")
+        detection_logger.info("Data base is created")
         add_row(row)
-        print("Added row to database")
+        detection_logger.info("Added row to database")

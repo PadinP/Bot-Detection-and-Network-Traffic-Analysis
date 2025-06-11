@@ -8,6 +8,7 @@ from sklearn.decomposition import PCA as pca
 import pandas as pd
 from datetime import datetime
 import modulo.preprocessdata.dictionaries as dic
+from app.config.logger_config import detection_logger 
 
 def normalize_bitnetflow(file_path):
     df = pd.read_csv(file_path)
@@ -39,7 +40,7 @@ def normalize_bitnetflow(file_path):
                    f"{row['TotBytes']},{row['SrcBytes']},{row['Label']}\n"
             f.write(line)
 
-    print(f"Archivo binetflow normalizado modificado exitosamente en: {file_path}")
+    detection_logger.info(f"Archivo binetflow normalizado modificado exitosamente en: {file_path}")
 
 
 def convert_proto_and_state_atributes(dataframe, label):
@@ -158,7 +159,7 @@ class data_transform:
         # Aplicar PCA a los datos para reducir su dimensionalidad considerando 98% de variaza explicativa acumulada
         pca_model = pca(n_components=7)
         results = pca_model.fit_transform(train_data)
-        print(f'Varianza explicada: {pca_model.explained_variance_ratio_}')
+        detection_logger.info(f'Varianza explicada: {pca_model.explained_variance_ratio_}')
 
         return results, scaler_model, pca_model #return np.array(results['PC']), scaler_model, pca_model
 

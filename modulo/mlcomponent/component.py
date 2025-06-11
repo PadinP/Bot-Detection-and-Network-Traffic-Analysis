@@ -7,7 +7,7 @@ from modulo.enfoqueMedia.pruebaEnf50 import *
 from modulo.enfoqueMedia.pruebaEnf100 import *
 from modulo.enfoqueMedia.pruebaEnf_200 import *
 from modulo.enfoqueMedia.pruebaEnf_300 import *
-
+from app.config.logger_config import detection_logger 
 
 class Component:
     # Nota del meta-componente.
@@ -25,11 +25,11 @@ class Component:
     def validate(self, tipe):
         if tipe == 2:
             if len(self.x_positives) == 0:
-                print("No human user data exists")
+                detection_logger.info("No human user data exists")
                 return False
         if tipe == 3:
             if len(self.metrics_characterization) == 0:
-                print("Lista de de metricas de caracterización vacia")
+                detection_logger.info("Lista de de metricas de caracterización vacia")
                 return False
 
         return True
@@ -88,10 +88,10 @@ class Component:
             # 4. Determinar el resultado final
             # Si al menos un sublote es detectado como bots, se considera bots
             if any(resultados):
-                print('Etiqueta asignada: bots')
+                detection_logger.info('Etiqueta asignada: bots')
                 self.metrics_characterization.append(1)
             else:
-                print('Etiqueta asignada: no bots')
+                detection_logger.info('Etiqueta asignada: no bots')
                 self.metrics_characterization.append(0)
 
     def procesar_lote(self, denominacion, datos):
@@ -110,7 +110,7 @@ class Component:
             case 300000:
                 resultado = pruebaEnfoque_i300_tp25(datos)
             case _:
-                print(f'Denominación no reconocida: {denominacion}')
+                detection_logger.info(f'Denominación no reconocida: {denominacion}')
                 return False
 
         return resultado
@@ -126,12 +126,12 @@ class Component:
 
     def run_charact(self):
         if len(self.x_positives) == 0:
-            print("The users array is empty")
+            detection_logger.info("The users array is empty")
         else:
-            print('Inicializando meta-componente\n')
-            print('Calculando métricas\n')
+            detection_logger.info('Inicializando meta-componente\n')
+            detection_logger.info('Calculando métricas\n')
             self.calculate_metrics()  # Se recalculan las métricas usando self.x_positives y self.expVariance.
-            print('Corriendo el enfoque para asignar la etiqueta\n')
+            detection_logger.info('Corriendo el enfoque para asignar la etiqueta\n')
             self.set_characterization_label()  # Se asigna la etiqueta (bots o no bots) según la lógica interna.
-            print('Añadiendo fila a la base de hechos\n')
+            detection_logger.info('Añadiendo fila a la base de hechos\n')
             self.save_data_charac()  # Se guarda la caracterización en la base de hechos.

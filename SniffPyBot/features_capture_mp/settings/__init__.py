@@ -2,7 +2,7 @@ import os
 import sys
 import traceback
 import logging.handlers
-from app.config.globals import LOG_FILE,LOG_PATH
+from app.config.settings import LOG_FILE,LOG_PATH
 
 
 def import_config():

@@ -5,7 +5,7 @@ import os
 from SniffPyBot.features_capture_mp.capture import Capture
 from SniffPyBot.features_capture_mp.settings import logger as logging
 from SniffPyBot.features_capture_mp.utils import verify_interface
-from app.config.globals import NETWORK_INTERFACE, PCAP_FILE
+from app.config.settings import NETWORK_INTERFACE, PCAP_FILE
 
 def run_capture(file_path):
     logging.info('Starting application with PID: %s' % os.getpid())

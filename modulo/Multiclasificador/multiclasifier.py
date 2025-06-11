@@ -5,7 +5,7 @@ import pandas as pd
 from modulo.Multiclasificador.models.individual import Diversity
 from modulo.Multiclasificador.models.voting import build_voting_models
 from modulo.Multiclasificador.utils.utils import estimators
-
+from app.config.logger_config import detection_logger    
 
 class Multiclasifier:
     def __init__(self):
@@ -34,9 +34,9 @@ class Multiclasifier:
                 if label.startswith('Vot-'):
                     list_models.append(int(label.replace('Vot-', '')))
                 else:
-                    print(f"Formato inesperado de label: {label}")
+                    detection_logger.info(f"Formato inesperado de label: {label}")
             except ValueError as e:
-                print(f"Error al convertir label a entero: {e}")
+                detection_logger.info(f"Error al convertir label a entero: {e}")
 
             model_extracted = joblib.load(model)
             np_metrics = np.array(self.metrics)
@@ -47,9 +47,9 @@ class Multiclasifier:
             # Añadir predicciones al DataFrame
             all_predictions[f'voting_{label}'] = pred_label
 
-        print('Clasificacion con models voting realizada')
+        detection_logger.info('Clasificacion con models voting realizada')
         counts = all_predictions.iloc[0].value_counts()
-        print(counts)
+        detection_logger.info(counts)
         if counts.get(1.0, 0) > counts.get(0.0, 0):
             return 1
         elif counts.get(0.0, 0) > counts.get(1.0, 0):

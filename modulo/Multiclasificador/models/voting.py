@@ -3,7 +3,7 @@ import pandas as pd
 from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import cross_val_score
 from modulo.Multiclasificador.utils import utils
-
+from app.config.logger_config import detection_logger   
 
 def build_voting_models(subsets, data_path):
     data = utils.loadData(data_path)
@@ -35,7 +35,7 @@ def build_voting_models(subsets, data_path):
 
         model = vote.fit(x_instances, y_instances)
         joblib.dump(model, r'' + name_model_file)
-    print("Modelos Voting construídos")
+    detection_logger.info("Modelos Voting construídos")
     results = pd.DataFrame(performance, columns=metricas, index=model_id)
 
     with open(name_evaluation_file, 'w') as f:

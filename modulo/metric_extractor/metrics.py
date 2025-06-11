@@ -5,7 +5,7 @@ from scipy.spatial.distance import jensenshannon
 from scipy.spatial import distance
 from numpy.linalg import inv
 import pickle as pck
-
+from app.config.logger_config import detection_logger  
 
 def managed_load(since=0, untilBot=5000, untilHuman=5000, e='0', smote=False):
     if smote:
@@ -182,9 +182,9 @@ class Metric:
             self.MAD()
 
             arr = [float(self.cusum), float(self.nCusum), float(self.entropy), float(self.js), float(self.mahalanobis), float(self.iqr), float(self.mad)]
-            print(f'Metrics: {arr}')
+            detection_logger.info(f'Metrics: {arr}')
 
             return arr
         else:
-            print("No existen datos")
+            detection_logger.info("No existen datos")
             return []

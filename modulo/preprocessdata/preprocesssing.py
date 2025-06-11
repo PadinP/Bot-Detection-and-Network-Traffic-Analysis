@@ -18,7 +18,7 @@ def preprocessing(data, scaler, sampler):
     :param sampler: Tipo de muestreo seleccionado.
     :return:
     """
-    print(f"data {data}")
+    # print(f"data {data}")
     # name = data.split('\\')[-1]
     # label = name.replace('.binetflow', '')
     label = datetime.now().strftime('%Y-%m-%d %H_%M_%S')
