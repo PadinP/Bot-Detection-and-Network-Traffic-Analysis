@@ -1,10 +1,10 @@
 import os
 import numpy as np
-from modulo.Facade import *
-from modulo.files.db_handler import save_data_characterization
+from Facade import *
+from files.db_handler import save_data_characterization
 from app.config.settings import OUTPUT_FOLDER
 from app.config.logger_config import detection_logger 
-from modulo.deteccion import DetectionModule 
+from deteccion import DetectionModule 
 
 class DetectionService:
     def __init__(self):
@@ -56,8 +56,10 @@ class DetectionService:
         else:
             self.detection_module.select_model()
             predictions = self.detection_module.classification_process()
-            self.detection_module.predictions = predictions  
+            amountHumans = np.sum(predictions == 0)
+            detection_logger.info(f'Cantidad de Humanos: {amountHumans}')
             amount_bots = int(np.sum(predictions == 1))
+            detection_logger.info(f"Cantidad de bots: {amount_bots}")
             detection_logger.info("---- stage2_detection end ----")
             return {"stage": 2, "bots_count": amount_bots}
     
@@ -85,7 +87,6 @@ class DetectionService:
         
         self.init_detection(filtered_file)
         # Asegúrate de llamar correctamente a estos métodos o atributos según tu implementación.
-        self.detection_module.data_preprocess
         self.detection_module.component_process()
         detection_logger.info("---- stage3_detection end ----")
         return {"stage": 3, "characterization_saved": True}

@@ -19,9 +19,11 @@ instance/
 .git/
 
 # Ignorar carpetas específicas con todo su contenido
-modulo/model_load/** 
-modulo/model_selector/** 
-modulo/database-preprosesing/**
+model_load/** 
+model_selector/** 
+database-preprosesing/**
 
 # Ignorar archivos de logs
-modulo/capturas/logs/bto_logs.log
+capturas/logs/bto_logs.log
+pcaps/capture.pcap
+

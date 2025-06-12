@@ -1,9 +1,9 @@
 
 
 # app/config/settings.py
-DIR_CAPTURE = "modulo/capturas"
-LOG_PATH = 'modulo/capturas/logs'
+DIR_CAPTURE = "capturas"
+LOG_PATH = 'capturas/logs'
 LOG_FILE = 'bto_logs.log'
-PCAP_FILE = 'modulo/capturas/pcaps/capture.pcap'
-OUTPUT_FOLDER = "modulo/capturas/archivos_filtrados"
-NETWORK_INTERFACE = "br-576f9142429a"
+PCAP_FILE = 'capturas/pcaps/capture.pcap'
+OUTPUT_FOLDER = "capturas/archivos_filtrados"
+NETWORK_INTERFACE = "br-184a6c757e99"
