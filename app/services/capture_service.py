@@ -1,43 +1,72 @@
 import multiprocessing
 import time
-from SniffPyBot.features_capture_mp.main import run_capture
-from app.config.settings import DIR_CAPTURE
-from app.config.logger_config import capture_logger  # Importa el logger configurado
+import sys
+import os
+from SniffPyBot.features_capture_mp.capture import Capture
+from SniffPyBot.features_capture_mp.utils import verify_interface
+from app.config.settings import NETWORK_INTERFACE, PCAP_FILE
+from app.config.logger_config import capture_logger
 
 class CaptureService:
     def __init__(self):
-        # Diccionario para almacenar las referencias a los procesos.
+        # Diccionario para almacenar las referencias a los procesos activos.
         self.processes = {}
 
-    def start_capture(self, capture_time, file_path):
+    def start_capture(self, capture_time: int, file_path: str) -> dict:
         """
-        Inicia la captura en un proceso separado, espera `capture_time` segundos,
-        y luego detiene el proceso de captura.
+        Inicia la captura en un proceso separado, permitiendo que se ejecute durante
+        'capture_time' segundos y luego detiene la captura.
         """
-        capture_logger.info("⚡ Captura iniciada...")
-        # Crea y ejecuta el proceso de captura.
-        process = multiprocessing.Process(target=run_capture, args=(file_path,))
+        capture_logger.info("⚡ Inicio de captura...")
+        process = multiprocessing.Process(
+            target=CaptureService.run_capture,  # Se invoca el método estático.
+            args=(file_path,)
+        )
         process.start()
         self.processes["capture"] = process
 
-        # Espera el tiempo determinado para la captura.
+        # Se permite que la captura se ejecute durante el tiempo especificado.
         time.sleep(capture_time)
-        stop_result = self.stop_capture()
+        result = self.stop_capture()
 
-        capture_logger.info(f"⏹️ Captura detenida después de {capture_time} segundos. Resultado: {stop_result}")
-        return {"status": "Capture cycle complete"}
+        capture_logger.info(
+            f"⏹️ Captura detenida después de {capture_time} segundos. Resultado: {result}"
+        )
+        return {"status": "Ciclo de captura completado"}
 
-    def stop_capture(self):
+    def stop_capture(self) -> dict:
         """
-        Detiene el proceso de captura si está activo y espera un tiempo para liberar recursos.
+        Detiene el proceso de captura si existe y se encuentra activo.
+        Luego, espera un periodo para liberar los recursos asociados.
         """
         sleep_time = 15
         process = self.processes.get("capture")
         if process and process.is_alive():
-            process.kill()
-            process.join()
+            process.kill()    # Finaliza el proceso de captura.
+            process.join()    # Asegura el cierre correcto del proceso.
             capture_logger.info(f"😴 Esperando {sleep_time} segundos para liberar recursos...")
             time.sleep(sleep_time)
             capture_logger.info(f"✅ Espera finalizada ({sleep_time} segundos).")
-            return {"status": "Capture stopped "}
-        return {"status": "No active capture process"}
+            return {"status": "Captura detenida"}
+        return {"status": "No hay proceso de captura activo"}
+
+    @staticmethod
+    def run_capture(file_path: str):
+        """
+        Arranca el proceso de captura, verificando la existencia de la interfaz.
+        Utiliza la configuración establecida para la interfaz de red y el archivo PCAP.
+        """
+        pid = os.getpid()
+        capture_logger.info("Iniciando aplicación con PID: %s", pid)
+        print("PID: %s" % pid)
+
+    
+
+        if verify_interface(NETWORK_INTERFACE):
+            capture = Capture(NETWORK_INTERFACE, PCAP_FILE, file_path)
+            capture.start()
+        else:
+            capture_logger.error(
+                "La interfaz %s no existe, terminando la aplicación", NETWORK_INTERFACE
+            )
+            sys.exit()
