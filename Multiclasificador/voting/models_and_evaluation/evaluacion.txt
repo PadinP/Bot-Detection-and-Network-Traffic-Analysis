@@ -1,32 +1,32 @@
         accuracy  precision  recall    f1  roc_auc
-Vot-1       0.48       0.45    0.90  0.60     0.85
-Vot-2       0.49       0.45    0.88  0.59     0.73
-Vot-3       0.79       0.84    0.82  0.78     0.86
-Vot-4       0.55       0.48    0.65  0.59     0.86
-Vot-5       0.79       0.84    0.82  0.78     0.72
-Vot-6       0.84       0.76    0.74  0.73     0.86
-Vot-7       0.80       0.69    0.74  0.64     0.89
-Vot-8       0.75       0.62    0.82  0.77     0.77
-Vot-9       0.75       0.82    0.83  0.65     0.81
-Vot-10      0.63       0.61    0.66  0.55     0.79
-Vot-11      0.73       0.74    0.86  0.74     0.88
-Vot-12      0.86       0.96    0.72  0.67     0.91
-Vot-13      0.91       0.98    0.72  0.70     0.85
-Vot-14      0.86       0.87    0.84  0.82     0.88
-Vot-15      0.54       0.60    0.86  0.52     0.85
+Vot-1       0.68       0.55    0.85  0.47     0.79
+Vot-2       0.49       0.48    0.90  0.61     0.83
+Vot-3       0.48       0.47    0.89  0.60     0.75
+Vot-4       0.64       0.71    0.68  0.54     0.83
+Vot-5       0.54       0.72    0.96  0.72     0.83
+Vot-6       0.72       0.59    0.87  0.66     0.87
+Vot-7       0.82       0.75    0.94  0.82     0.91
+Vot-8       0.74       0.81    0.83  0.87     0.85
+Vot-9       0.70       0.58    0.83  0.56     0.75
+Vot-10      0.83       0.75    0.91  0.82     0.88
+Vot-11      0.81       0.73    0.78  0.84     0.88
+Vot-12      0.72       0.73    0.83  0.53     0.82
+Vot-13      0.65       0.67    0.66  0.56     0.80
+Vot-14      0.50       0.57    0.87  0.68     0.85
+Vot-15      0.89       0.83    0.66  0.87     0.95
 
-Vot-1 -----> [('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
-Vot-2 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB())]
-Vot-3 -----> [('SVC', SVC(max_iter=15000, probability=True)), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
-Vot-4 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss'))]
-Vot-5 -----> [('LR', LogisticRegression(max_iter=1500)), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
-Vot-6 -----> [('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
-Vot-7 -----> [('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True)), ('EXTRA', ExtraTreeClassifier())]
-Vot-8 -----> [('LR', LogisticRegression(max_iter=1500)), ('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB())]
-Vot-9 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB()), ('EXTRA', ExtraTreeClassifier())]
-Vot-10 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
-Vot-11 -----> [('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True)), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
-Vot-12 -----> [('CART', DecisionTreeClassifier()), ('SVC', SVC(max_iter=15000, probability=True)), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
-Vot-13 -----> [('SVC', SVC(max_iter=15000, probability=True)), ('MLP', MLPClassifier(max_iter=4000, random_state=0)), ('EXTRA', ExtraTreeClassifier())]
-Vot-14 -----> [('NAIVE', GaussianNB()), ('KNN', KNeighborsClassifier())]
-Vot-15 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss')), ('SVC', SVC(max_iter=15000, probability=True))]
+Vot-1 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss'))]
+Vot-2 -----> [('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
+Vot-3 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB())]
+Vot-4 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss')), ('SVC', SVC(max_iter=15000, probability=True))]
+Vot-5 -----> [('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss'))]
+Vot-6 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss')), ('EXTRA', ExtraTreeClassifier())]
+Vot-7 -----> [('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
+Vot-8 -----> [('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True)), ('EXTRA', ExtraTreeClassifier())]
+Vot-9 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss'))]
+Vot-10 -----> [('LR', LogisticRegression(max_iter=1500)), ('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB())]
+Vot-11 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB()), ('EXTRA', ExtraTreeClassifier())]
+Vot-12 -----> [('SGD', SGDClassifier(loss='log_loss')), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
+Vot-13 -----> [('LR', LogisticRegression(max_iter=1500)), ('NAIVE', GaussianNB()), ('SVC', SVC(max_iter=15000, probability=True))]
+Vot-14 -----> [('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss')), ('MLP', MLPClassifier(max_iter=4000, random_state=0))]
+Vot-15 -----> [('CART', DecisionTreeClassifier()), ('NAIVE', GaussianNB()), ('SGD', SGDClassifier(loss='log_loss')), ('EXTRA', ExtraTreeClassifier())]

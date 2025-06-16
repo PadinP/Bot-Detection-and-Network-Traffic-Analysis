@@ -19,6 +19,7 @@ class DetectionModule:
         self.data_preprocess = None
         self.data_charac = None
         self.data_explained_variance_ratio = None
+        self.multiclasifier_result = None
 
     def set_data(self, data):
         self.data = data

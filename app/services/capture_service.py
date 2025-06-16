@@ -1,4 +1,4 @@
-import multiprocessing
+import multiprocessing 
 import time
 import sys
 import os
@@ -57,16 +57,11 @@ class CaptureService:
         Utiliza la configuración establecida para la interfaz de red y el archivo PCAP.
         """
         pid = os.getpid()
-        capture_logger.info("Iniciando aplicación con PID: %s", pid)
         print("PID: %s" % pid)
-
-    
 
         if verify_interface(NETWORK_INTERFACE):
             capture = Capture(NETWORK_INTERFACE, PCAP_FILE, file_path)
             capture.start()
         else:
-            capture_logger.error(
-                "La interfaz %s no existe, terminando la aplicación", NETWORK_INTERFACE
-            )
+            print("La interfaz %s no existe, terminando la aplicación" % NETWORK_INTERFACE)
             sys.exit()

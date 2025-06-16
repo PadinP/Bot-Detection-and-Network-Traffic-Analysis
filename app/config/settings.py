@@ -6,4 +6,4 @@ LOG_PATH = 'capturas/logs'
 LOG_FILE = 'bto_logs.log'
 PCAP_FILE = 'capturas/pcaps/capture.pcap'
 OUTPUT_FOLDER = "capturas/archivos_filtrados"
-NETWORK_INTERFACE = "br-184a6c757e99"
+NETWORK_INTERFACE = "br-4ebfeff114bd"

@@ -1,3 +1,6 @@
+import warnings
+warnings.filterwarnings("ignore", message="resource_tracker: There appear to be")
+
 import uvicorn
 import contextlib
 from fastapi import FastAPI
@@ -8,12 +11,10 @@ from app.routers import bot_detection_flow
 async def lifespan(app: FastAPI):
     # Aquí puedes inicializar recursos si es necesario.
     yield
-    # Se ejecuta al finalizar el ciclo de vida de la aplicación.
     _resource_tracker._stop()
     print("Aplicación cerrándose, limpiando recursos...")
 
 app = FastAPI(lifespan=lifespan)
-
 app.include_router(bot_detection_flow.router)
 
 if __name__ == "__main__":
