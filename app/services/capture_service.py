@@ -3,7 +3,7 @@ import time
 import sys
 import os
 from SniffPyBot.features_capture_mp.capture import Capture
-from SniffPyBot.features_capture_mp.utils import verify_interface
+from SniffPyBot.features_capture_mp.network_utils import verify_interface
 from app.config.settings import NETWORK_INTERFACE, PCAP_FILE
 from app.config.logger_config import capture_logger
 

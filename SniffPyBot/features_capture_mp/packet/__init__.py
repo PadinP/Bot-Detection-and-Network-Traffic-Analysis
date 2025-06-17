@@ -3,7 +3,7 @@ import queue
 from datetime import datetime
 from multiprocessing import Process, Queue
 from SniffPyBot.features_capture_mp.settings import logger as logging
-from SniffPyBot.features_capture_mp.utils import get_date_string
+from SniffPyBot.features_capture_mp.network_utils import get_date_string
 
 # Timeout to wait for new packets
 INTERVAL = 15

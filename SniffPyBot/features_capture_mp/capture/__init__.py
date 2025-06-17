@@ -1,7 +1,7 @@
 from pyshark import LiveCapture
 from SniffPyBot.features_capture_mp.packet import FlowAnalysis
 from SniffPyBot.features_capture_mp.settings import logger as logging
-from SniffPyBot.features_capture_mp.utils import get_processes_names, get_process_by_name
+from SniffPyBot.features_capture_mp.network_utils import get_processes_names, get_process_by_name
 
 
 class Capture:
