@@ -58,7 +58,7 @@ class CaptureService:
         """
         pid = os.getpid()
         print("PID: %s" % pid)
-
+        print("La interfaz %s existe, empezando la aplicación" % NETWORK_INTERFACE)
         if verify_interface(NETWORK_INTERFACE):
             capture = Capture(NETWORK_INTERFACE, PCAP_FILE, file_path)
             capture.start()
