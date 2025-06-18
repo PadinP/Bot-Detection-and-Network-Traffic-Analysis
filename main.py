@@ -14,7 +14,7 @@ async def lifespan(app: FastAPI):
     _resource_tracker._stop()
     print("Aplicación cerrándose, limpiando recursos...")
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, docs_url="/")
 app.include_router(bot_detection_flow.router)
 
 if __name__ == "__main__":
