@@ -5,6 +5,9 @@ from files.db_handler import save_data_characterization
 from app.config.settings import OUTPUT_FOLDER
 from app.config.logger_config import detection_logger 
 from deteccion import DetectionModule 
+from strategies.dask_flujo_filter_strategy import DaskFlujoFilterStrategy
+from strategies.flujo_filter_context import FlujoFilterContext
+
 
 class DetectionService:
     def __init__(self):
@@ -78,15 +81,14 @@ class DetectionService:
         base_name = os.path.basename(file_path2)
         name_without_ext = os.path.splitext(base_name)[0]
         filtered_file = os.path.join(OUTPUT_FOLDER, f"{name_without_ext}_filtered.binetflow")
-        
-        from strategies.dask_flujo_filter_strategy import DaskFlujoFilterStrategy
-        from strategies.flujo_filter_context import FlujoFilterContext
+
         strategy = DaskFlujoFilterStrategy()
         context = FlujoFilterContext(strategy)
         context.filtrar_flujos(file_path2, filtered_file)
+     
         
         self.init_detection(filtered_file)
-        # Asegúrate de llamar correctamente a estos métodos o atributos según tu implementación.
+        self.detection_module.preprocess_data(samplers="no_balanced")
         self.detection_module.component_process()
         detection_logger.info("---- stage3_detection end ----")
         return {"stage": 3, "characterization_saved": True}
