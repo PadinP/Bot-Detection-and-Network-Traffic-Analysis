@@ -103,60 +103,60 @@ services:
       - sample_website_default
     restart: always
 
-  bot_remote_6:
-    container_name: bot_remote_6
-    image: selenium/standalone-firefox
-    ports:
-      - "4006:4444"
-    depends_on:
-      - bot_remote_5
-    networks:
-      - sample_website_default
-    restart: always
+  # bot_remote_6:
+  #   container_name: bot_remote_6
+  #   image: selenium/standalone-firefox
+  #   ports:
+  #     - "4006:4444"
+  #   depends_on:
+  #     - bot_remote_5
+  #   networks:
+  #     - sample_website_default
+  #   restart: always
 
-  bot_remote_7:
-    container_name: bot_remote_7
-    image: selenium/standalone-firefox
-    ports:
-      - "4007:4444"
-    depends_on:
-      - bot_remote_6
-    networks:
-      - sample_website_default
-    restart: always
+  # bot_remote_7:
+  #   container_name: bot_remote_7
+  #   image: selenium/standalone-firefox
+  #   ports:
+  #     - "4007:4444"
+  #   depends_on:
+  #     - bot_remote_6
+  #   networks:
+  #     - sample_website_default
+  #   restart: always
 
-  bot_remote_8:
-    container_name: bot_remote_8
-    image: selenium/standalone-firefox
-    ports:
-      - "4008:4444"
-    depends_on:
-      - bot_remote_7
-    networks:
-      - sample_website_default
-    restart: always
+  # bot_remote_8:
+  #   container_name: bot_remote_8
+  #   image: selenium/standalone-firefox
+  #   ports:
+  #     - "4008:4444"
+  #   depends_on:
+  #     - bot_remote_7
+  #   networks:
+  #     - sample_website_default
+  #   restart: always
 
-  bot_remote_9:
-    container_name: bot_remote_9
-    image: selenium/standalone-firefox
-    ports:
-      - "4009:4444"
-    depends_on:
-      - bot_remote_8
-    networks:
-      - sample_website_default
-    restart: always
+  # bot_remote_9:
+  #   container_name: bot_remote_9
+  #   image: selenium/standalone-firefox
+  #   ports:
+  #     - "4009:4444"
+  #   depends_on:
+  #     - bot_remote_8
+  #   networks:
+  #     - sample_website_default
+  #   restart: always
 
-  bot_remote_10:
-    container_name: bot_remote_10
-    image: selenium/standalone-firefox
-    ports:
-      - "4010:4444"
-    depends_on:
-      - bot_remote_9
-    networks:
-      - sample_website_default
-    restart: always
+  # bot_remote_10:
+  #   container_name: bot_remote_10
+  #   image: selenium/standalone-firefox
+  #   ports:
+  #     - "4010:4444"
+  #   depends_on:
+  #     - bot_remote_9
+  #   networks:
+  #     - sample_website_default
+  #   restart: always
 
 volumes:
   mysqldata:
