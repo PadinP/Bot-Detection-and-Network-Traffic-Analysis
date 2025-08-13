@@ -23,6 +23,25 @@ It includes:
 
 ---
 
+### Download ML Pipeline resources
+
+This project requires additional resources for **database preprocessing**, **model selection**, and **model loading**.
+They are packaged in a ZIP file stored in Google Drive.
+
+1. Go to the following link and download the file:  
+**[Download from Google Drive](https://drive.google.com/drive/folders/1O9nXFq8NP8-1X1Gi_3HKEY6UmjpZUUAA)**  
+2. Extract the contents in the project root folder:  
+```bash
+unzip ml_pipeline.zip -d .
+```
+3. Ensure the following directories are created:  
+- `database-preprocessing/`  
+- `model_selector/`  
+- `model_load/`  
+
+These resources must be in place before running the rest of the setup steps.
+
+---
 ## Installation and Setup
 
 ### 1. Install Firefox
