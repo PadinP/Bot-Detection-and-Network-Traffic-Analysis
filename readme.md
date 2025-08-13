@@ -1,4 +1,5 @@
-# Bot Detection and Capture Project
+# Bot Detection and Network Traffic Analysis
+
 
 ![Python](https://img.shields.io/badge/Python-blue) ![Docker](https://img.shields.io/badge/Docker-Compose-blue)
 
