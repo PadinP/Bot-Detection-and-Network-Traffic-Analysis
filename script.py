@@ -1,7 +1,7 @@
 import subprocess
 
 
-WORKING_DIR = "/home/app/Escritorio/proyecto/SniffPyBot/moderate_bot"
+WORKING_DIR = "./SniffPyBot/moderate_bot"
 
 
 commands = [
