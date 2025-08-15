@@ -18,10 +18,10 @@ It includes:
 
 ## Requirements
 
-- **Python**
-- **Wireshark**
-- **Docker and Docker Compose**
-
+* **[Python 3.10+](https://www.python.org/downloads/)** 
+* **[Wireshark](https://www.wireshark.org/download.html)** 
+* **[Docker](https://docs.docker.com/get-docker/)** 
+* **[Docker Compose](https://docs.docker.com/compose/install/)** 
 ---
 
 ### Download ML Pipeline resources
